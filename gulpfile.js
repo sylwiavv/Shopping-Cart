@@ -9,6 +9,7 @@ const postcss = require('gulp-postcss');
 const sass = require('gulp-sass');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+var sourcemaps = require('gulp-sourcemaps');
 
 const config = {
     app: {
@@ -40,9 +41,11 @@ function jsTask(done) {
 
 function cssTask(done) {
     src(config.app.scss)
+        .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'expanded' }))
         .pipe(rename({ suffix: '.bundle' }))
         .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(sourcemaps.write())
         .pipe(dest(config.dist.base))
     done();
 }
