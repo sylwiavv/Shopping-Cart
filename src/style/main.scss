@@ -1,25 +1,9 @@
 @import "fonts";
+@import "reset-css";
+@import "indents";
+@import "colors";
 
-h1,
-h3 {
-    color: #fff;
-    padding: 2rem 0;
-    font-family: 'Comfortaa', sans-serif;
-    text-align: center;
-    width: 100%;
-    font-weight: 400;
-}
-h3 {
-    font-size: 34px;
-}
-p {
-    color: grey;
-    text-align: center;
-    width: 100%;
-    font-family: 'Comfortaa', sans-serif;
-    font-weight: 600;
-}
-
-body {
-    background-color: #0b0e38;
+* {
+    font-family: $main-font;
+    color: $font-color__primary;
 }
