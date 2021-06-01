@@ -1,9 +1,17 @@
-@import "fonts";
-@import "reset-css";
-@import "indents";
-@import "colors";
+@import "variables/fonts";
+@import "variables/reset-css";
+@import "variables/indents";
+@import "variables/colors";
+@import "variables/breakpoints";
+
+@import "navbar";
+@import "product-list";
 
 * {
     font-family: $main-font;
     color: $font-color__primary;
+}
+
+body {
+    max-width: $max-container__width;
 }
