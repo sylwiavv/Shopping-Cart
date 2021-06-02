@@ -30,6 +30,14 @@ const config = {
     }
 }
 
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', function () {
+    return gulp.src("./dist/**/*")
+        .pipe(deploy())
+});
+
 function jsTask(done) {
     src(config.app.js)
         .pipe(babel({
@@ -95,14 +103,6 @@ function reload (done) {
 function cleanUp() {
     return del([config.dist.base]);
 }
-
-/**
- * Push build to gh-pages
- */
-gulp.task('deploy', function () {
-    return gulp.src("./dist/**/*")
-        .pipe(deploy())
-});
 
 exports.dev = parallel(jsTask, cssTask, fontTask, imagesTask, templateTask, watchFiles, liveReload);
 exports.build = series(cleanUp, parallel(jsTask, cssTask, fontTask, imagesTask, templateTask));
