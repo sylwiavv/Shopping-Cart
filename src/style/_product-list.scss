@@ -2,11 +2,12 @@
   h1 {
     display: flex;
     justify-content: center;
+    color: red;
   }
 
   ul {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    //grid-template-columns: repeat(3, 1fr);
     grid-gap: 16px;
 
     li {
@@ -26,7 +27,7 @@
       }
 
       &.odd {
-        background-color: #fafafa;
+        background-color: $gray-color__primary;
       }
 
       .odd:hover,
@@ -69,6 +70,43 @@
       .title {
         grid-column-start: 2;
       }
+    }
+  }
+}
+
+@include media-queries(tablet-portrait-up) {
+  .products-container-list {
+    h1 {
+      color: hotpink;
+    }
+  }
+}
+
+
+@include media-queries(tablet-landscape-up) {
+  .products-container-list {
+    h1 {
+      color: green;
+    }
+  }
+}
+
+@include media-queries(tablet-landscape-up) {
+  .products-container-list {
+    h1 {
+      color: green;
+    }
+  }
+}
+
+@include media-queries(desktop-up) {
+  .products-container-list {
+    h1 {
+      color: gold;
+    }
+
+    ul {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }

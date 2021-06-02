@@ -3,6 +3,7 @@
 @import "variables/indents";
 @import "variables/colors";
 @import "variables/breakpoints";
+@import "variables/mixins";
 
 @import "navbar";
 @import "product-list";
@@ -13,5 +14,6 @@
 }
 
 body {
+    background-color: $white-color;
     max-width: $max-container__width;
 }
