@@ -2,7 +2,7 @@
   h1 {
     display: flex;
     justify-content: center;
-    color: red;
+    color: blue;
   }
 
   ul {
@@ -102,7 +102,7 @@
 @include media-queries(desktop-up) {
   .products-container-list {
     h1 {
-      color: gold;
+      color: cornflowerblue;
     }
 
     ul {
