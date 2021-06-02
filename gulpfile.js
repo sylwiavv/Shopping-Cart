@@ -10,6 +10,8 @@ const sass = require('gulp-sass');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 var sourcemaps = require('gulp-sourcemaps');
+var gulp        = require('gulp');
+var deploy      = require('gulp-gh-pages');
 
 const config = {
     app: {
@@ -93,6 +95,14 @@ function reload (done) {
 function cleanUp() {
     return del([config.dist.base]);
 }
+
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', function () {
+    return gulp.src("./dist/**/*")
+        .pipe(deploy())
+});
 
 exports.dev = parallel(jsTask, cssTask, fontTask, imagesTask, templateTask, watchFiles, liveReload);
 exports.build = series(cleanUp, parallel(jsTask, cssTask, fontTask, imagesTask, templateTask));
