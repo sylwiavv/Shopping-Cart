@@ -1,0 +1,23 @@
+.navbar {
+  background-color: $white-color;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $border__color;
+  padding-left: $indent__xl;
+  padding-right: $indent__xl;
+
+  .shop-logo {
+    margin-right: $indent__m;
+  }
+
+  .title {
+    margin-right: auto;
+  }
+
+  .shop-logo {
+    img {
+      width: 30px;
+      height: auto;
+    }
+  }
+}

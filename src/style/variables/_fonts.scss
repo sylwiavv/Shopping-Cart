@@ -1,0 +1,59 @@
+// Variables
+$main-font: 'Comfortaa', sans-serif;
+
+// Font weights
+$font-weight__light: 300;
+$font-weight__regular: 400;
+$font-weight__heavier: 500;
+$font-weight__semibold: 600;
+$font-weight__bold: 700;
+
+// Font sizes
+$font-size__base: 16px;
+
+$font-size__xs: 8px;
+$font-size__s: $font-size__base;
+$font-size__m: 18px;
+$font-size__l: 24px;
+$font-size__xl: 30px;
+
+//  Line heights
+$line-height-sm: 1.25;
+$line-height-md: 1.5;
+
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/fonts/Comfortaa/Comfortaa-Light.ttf') format('ttf'),
+    url('/fonts/Comfortaa-Light.ttf') format('ttf');
+    font-weight: $font-weight__light;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/fonts/Comfortaa/Comfortaa-Regular.ttf') format('ttf'),
+    url('/fonts/Comfortaa-Regular.ttf') format('ttf');
+    font-weight: $font-weight__regular;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/fonts/Comfortaa/Comfortaa-Medium.ttf') format('ttf'),
+    url('/fonts/Comfortaa-Medium.ttf') format('ttf');
+    font-weight: $font-weight__heavier;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/fonts/Comfortaa/Comfortaa-SemiBold.ttf') format('ttf'),
+    url('/fonts/Comfortaa-SemiBold.ttf') format('ttf');
+    font-weight: $font-weight__semibold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/fonts/Comfortaa/Comfortaa-Bold.ttf') format('ttf'),
+    url('/fonts/Comfortaa-Bold.ttf') format('ttf');
+    font-weight: $font-weight__bold;
+    font-style: normal;
+}

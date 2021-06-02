@@ -1,25 +1,19 @@
-@import "fonts";
+@import "variables/fonts";
+@import "variables/reset-css";
+@import "variables/indents";
+@import "variables/colors";
+@import "variables/breakpoints";
+@import "variables/mixins";
 
-h1,
-h3 {
-    color: #fff;
-    padding: 2rem 0;
-    font-family: 'Comfortaa', sans-serif;
-    text-align: center;
-    width: 100%;
-    font-weight: 400;
-}
-h3 {
-    font-size: 34px;
-}
-p {
-    color: grey;
-    text-align: center;
-    width: 100%;
-    font-family: 'Comfortaa', sans-serif;
-    font-weight: 600;
+@import "navbar";
+@import "product-list";
+
+* {
+    font-family: $main-font;
+    color: $font-color__primary;
 }
 
 body {
-    background-color: #0b0e38;
+    background-color: $white-color;
+    max-width: $max-container__width;
 }
