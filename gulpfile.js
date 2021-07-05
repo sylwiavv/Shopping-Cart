@@ -20,7 +20,7 @@ const config = {
         ],
         scss: './src/style/**/*.scss',
         fonts: './src/fonts/*',
-        images: './src/images/*.*',
+        images: './src/images/**/*',
         html: './src/*.html'
     },
     dist: {

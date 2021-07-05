@@ -6,7 +6,8 @@
 @import "variables/mixins";
 
 @import "navbar";
-@import "product-list";
+@import "products-list";
+@import "product-item";
 
 * {
     font-family: $main-font;
