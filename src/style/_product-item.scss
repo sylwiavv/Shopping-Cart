@@ -17,11 +17,11 @@
     z-index: 1;
 
     .product__image {
-      opacity: .2;
+      // opacity: .2;
 
       .add-to-cart {
         background: gold;
-        transform: translateY(0);
+        // transform: translateX(16px);
         opacity: 1;
         z-index: 100;
       }
@@ -40,13 +40,12 @@
     background-size: cover;
 
     .add-to-cart {
-      background: red;
-      transform: translateY(95px);
-      opacity: 0;
-    display: inline-block;
-    transition: .3s ease;
-    position: absolute;
-    bottom: 20px;
+      // transform: translateX(0px);
+      // opacity: 0;
+      display: inline-block;
+      transition: .3s ease;
+      position: absolute;
+      bottom: 20px;
     }
   }
 

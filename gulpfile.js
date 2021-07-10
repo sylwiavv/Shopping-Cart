@@ -16,7 +16,8 @@ var deploy      = require('gulp-gh-pages');
 const config = {
     app: {
         js: [
-            './src/scripts/**/*.js',
+          './src/scripts/products.js',
+          './src/scripts/**/*.js',
         ],
         scss: './src/style/**/*.scss',
         fonts: './src/fonts/*',
