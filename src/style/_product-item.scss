@@ -46,13 +46,19 @@
       transition: .3s ease;
       position: absolute;
       bottom: 20px;
+      left: 16px;
+    }
+
+    .remove-from-cart {
+      position: absolute;
+      bottom: 60px;
+      left: 16px;
     }
   }
 
   &__details {
     display: flex;
     flex-direction: column;
-    padding: $indent__m;
     grid-row-start: 2;
   }
 
@@ -61,7 +67,22 @@
     font-family: $main-font;
     font-weight: $font-weight__bold;
     text-transform: uppercase;
-    letter-spacing: .025em
+    letter-spacing: .025em;
+    margin-top: 0;
+  }
+
+  &__title,
+  &__sku,
+  &__qty,
+  &__price {
+    margin-bottom: 0;
+  }
+
+  &__sku {
+    font-size: 14px;
+    color: #7d7d7d;
+    margin-top: $indent__s;
+    margin-bottom: $indent__s;
   }
 
   &__price {
