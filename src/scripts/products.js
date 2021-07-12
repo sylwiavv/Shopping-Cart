@@ -26,26 +26,23 @@ let productsArray = [
     createProduct('Alocasia Stingray', 2, 123, 'Sku15', 'images/plants/alocasia_stingray.jpeg'),
     createProduct('Philodendron Silver Queen', 2, 123, 'Sku16', 'images/plants/philodendron_silver_queen.jpeg'),
     createProduct('Syngonium Noteon Robusta', 2, 123, 'Sku17','images/plants/syngonium_neon_robusta.jpeg'),
-    createProduct('Alocasia Elephant Ears', 2, 123, 'Sku18', 'images/plants/alocasia_elephant_ears.jpeg'),
-    createProduct('Ficus Lyrata', 2, 123, 'Sku19', 'images/plants/ficus_lyrata.jpeg'),
-    createProduct('Pilea Peperomioides', 2, 123, 'Sku20', 'images/plants/pilea_peperomioides.jpeg')
+    createProduct('Ficus Lyrata', 2, 123, 'Sku18', 'images/plants/ficus_lyrata.jpeg'),
+    createProduct('Pilea Peperomioides', 2, 123, 'Sku19', 'images/plants/pilea_peperomioides.jpeg')
 ];
 
 const productList = document.querySelector('#main-products-list');
 
 // Make html list with products
-productList.innerHTML = productsArray.map(product =>
-    `<li class="product">
-        <div class="product__image" style="background-image:url('${product.Image}')">
-          <div class="add-to-cart">
-          <div class="add-to-cart">dodaj do koszyka</div></div>
-        </div>
-        <div class="product__details">
-            <p class="product__sku">${product.Sku}</p>
-            <h3 class="product__title">${product.Name}</h3>
-            <input class="button-multi--inner" type="number" id="Quantity" name="quantity" value="1" min="1">
-            <p class="product__qty">Qty: ${product.Qty}</p>
-            <p class="product__price">$${product.Price}</p>
-        </div>
-    </li>`
-).join('')
+  productList.innerHTML = productsArray.map(product =>
+      `<li class="product">
+          <div class="product__image" style="background-image:url('${product.Image}')">
+            <div class="add-to-cart">dodaj do koszyka</div></div>
+          <div class="product__details">
+              <p class="product__sku">${product.Sku}</p>
+              <h3 class="product__title">${product.Name}</h3>
+              <input class="button-multi--inner" type="number" id="Quantity" name="quantity" value="1" min="1">
+              <p class="product__qty">Qty: ${product.Qty}</p>
+              <p class="product__price">$${product.Price}</p>
+          </div>
+      </li>`
+  ).join('')

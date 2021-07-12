@@ -10,14 +10,15 @@ const sass = require('gulp-sass');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 var sourcemaps = require('gulp-sourcemaps');
-var gulp        = require('gulp');
-var deploy      = require('gulp-gh-pages');
+var gulp = require('gulp');
+var deploy = require('gulp-gh-pages');
+var order = require("gulp-order");
 
 const config = {
     app: {
         js: [
           './src/scripts/products.js',
-          './src/scripts/**/*.js',
+          './src/scripts/**/*.js'
         ],
         scss: './src/style/**/*.scss',
         fonts: './src/fonts/*',
@@ -107,3 +108,4 @@ function cleanUp() {
 
 exports.dev = parallel(jsTask, cssTask, fontTask, imagesTask, templateTask, watchFiles, liveReload);
 exports.build = series(cleanUp, parallel(jsTask, cssTask, fontTask, imagesTask, templateTask));
+exports.js = parallel(jsTask);
