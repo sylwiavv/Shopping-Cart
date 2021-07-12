@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar">
         <div class="shop-logo">
-            <img src="images/logo.svg" alt="Shop Name Logo"/>
+            <!-- <img src="images/logo.svg" alt="Shop Name Logo"/> -->
         </div>
         <h1 class="title">Shop Name</h1>
         <div class="cart-icon">
@@ -21,12 +21,18 @@
         </div>
     </nav>
 
-    <div id="product-list" class="main-box">
+    <div class="main-box">
+          <div id="product-list">
         <h1>Our plants</h1>
         <ul id="main-products-list" class="products-list-container">
         </ul>
     </div>
 
+    <div id="cart-list">
+        <h1>Cart</h1>
+        <ul id="main-products-cart-list" class="products-list-container"></ul>
+    </div>
+  </div>
     <script src="main.bundle.js"></script>
 </body>
 </html>
