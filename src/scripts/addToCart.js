@@ -1,9 +1,6 @@
 const removeFromCartButtons = document.querySelectorAll(".remove-from-cart");
 const addToCartButtons = document.querySelectorAll(".add-to-cart");
-const products = document.querySelectorAll('.product');
 const cartList = document.querySelector("#main-products-cart-list");
-const cart = [];
-const qty = document.querySelectorAll('.product__qty').textContent;
 
 const renderAll = () => {
   updateCartTotal();
@@ -17,8 +14,8 @@ const removeProductFromCart = () => {
     removeButton.addEventListener('click', (event) => {
       const removeButtonClicked = event.target;
       const parent = removeButtonClicked.parentElement.parentElement;
-      updateCartTotal();
       parent.remove();
+      updateCartTotal();
     })
   });
 }
@@ -28,16 +25,15 @@ const addProductToCart = () => {
     addButton.addEventListener('click', (event) => {
       const addButtonClicked = event.target;
       const parent = addButtonClicked.parentElement.parentElement;
-      console.log('test');
       updateCartTotal();
     })
   });
 }
 
-const productList = document.querySelector('#main-products-list');
 
 //UPDATE QTY
 const updateCartTotal = () => {
+  let products = document.querySelectorAll('.product');
   let total = 0;
 
   for (let i = 0; i < products.length; i++) {
@@ -47,7 +43,6 @@ const updateCartTotal = () => {
     const price = parseFloat(priceElement.innerText.replace('$', ''));
     const quantity = qtylement.value;
     total = total + (price * quantity);
-    console.log(total);
   }
 
   document.querySelectorAll('#total-price')[0].innerHTML = '$' + total;

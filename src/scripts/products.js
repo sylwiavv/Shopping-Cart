@@ -34,10 +34,10 @@ const productList = document.querySelector('#main-products-list');
 
 // Make html list with products
   productList.innerHTML = productsArray.map(product =>
-      `<li class="product">
+      `<li data-product-id="${product.Sku}" class="product">
           <div class="product__image" style="background-image:url('${product.Image}')">
             <div data="${product.Name}" class="add-to-cart">dodaj do koszyka</div>
-            <button class="remove-from-cart">usun</button>
+            <button data="${product.Name}" class="remove-from-cart">usun</button>
             </div>
           <div class="product__details">
               <p class="product__sku">${product.Sku}</p>
