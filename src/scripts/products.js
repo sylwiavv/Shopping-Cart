@@ -33,6 +33,7 @@ let productsArray = [
 const productList = document.querySelector('#main-products-list');
 
 // Make html list with products
+// const renderProducts = () => {
   productList.innerHTML = productsArray.map(product =>
       `<li data-product-id="${product.Sku}" class="product">
           <div class="product__image" style="background-image:url('${product.Image}')">
@@ -47,3 +48,21 @@ const productList = document.querySelector('#main-products-list');
           </div>
       </li>`
   ).join('')
+// }
+
+const renderProducts = (container, products) => {
+  container.innerHTML = products.map(product =>
+      `<li data-product-id="${product.Sku}" class="product">
+          <div class="product__image" style="background-image:url('${product.Image}')">
+            <div data="${product.Name}" class="add-to-cart">dodaj do koszyka</div>
+            <button data="${product.Name}" class="remove-from-cart">usun</button>
+            </div>
+          <div class="product__details">
+              <p class="product__sku">${product.Sku}</p>
+              <h3 class="product__title">${product.Name}</h3>
+              <input class="product__qty" type="number" value="${product.Qty}">
+              <p class="product__price">$${product.Price}</p>
+          </div>
+      </li>`
+  ).join('')
+}
