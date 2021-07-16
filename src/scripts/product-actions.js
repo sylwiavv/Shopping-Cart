@@ -1,6 +1,6 @@
 const cartProductsList = document.querySelector('#main-products-cart-list');
 const addToCartButtons = document.querySelectorAll('.add-to-cart');
-// const productsArray = renderProducts();
+
 const cartArray = [];
 
 // ADD CLICK

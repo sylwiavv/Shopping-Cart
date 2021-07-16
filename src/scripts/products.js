@@ -30,24 +30,8 @@ let productsArray = [
     createProduct('Pilea Peperomioides',1, 54, 'Sku19', 'images/plants/pilea_peperomioides.jpeg')
 ];
 
-const productList = document.querySelector('#main-products-list');
-
 // Make html list with products
 // const renderProducts = () => {
-  productList.innerHTML = productsArray.map(product =>
-      `<li data-product-id="${product.Sku}" class="product">
-          <div class="product__image" style="background-image:url('${product.Image}')">
-            <div class="add-to-cart">dodaj do koszyka</div>
-            <button class="remove-from-cart">usun</button>
-          </div>
-          <div class="product__details">
-              <p class="product__sku">${product.Sku}</p>
-              <h3 class="product__title">${product.Name}</h3>
-              <input class="product__qty" type="number" value="${product.Qty}">
-              <p class="product__price">$${product.Price}</p>
-          </div>
-      </li>`
-  ).join('')
 // }
 
 const renderProducts = (container, products) => {
@@ -66,3 +50,5 @@ const renderProducts = (container, products) => {
       </li>`
   ).join('')
 }
+const producstList = document.querySelector('#main-products-list');
+renderProducts(producstList, productsArray);
