@@ -9,7 +9,7 @@ const createProduct = (Name, Qty, Price, Sku, Image) => {
 };
 
 let productsArray = [
-    createProduct('Strelitzia Nicolai', 1, 30, 'Sku1', 'images/plants/strelitzia_nicolai.jpeg'),
+    createProduct('Strelitzia Nicolai', 2, 30, 'Sku1', 'images/plants/strelitzia_nicolai.jpeg'),
     createProduct('Alocasia Amazonian elephant ear',1, '12,67', 'Sku2', 'images/plants/alocasia_amazonian_elephant_ear.jpeg'),
     createProduct('Ficus Elastica', 1, 76, 'Sku3', 'images/plants/ficus_elastica.png'),
     createProduct('Monstera deliciosa thai constellation', 1, 73, 'Sku4', 'images/plants/monstera_deliciosa_thai_constellation.jpeg'),
@@ -37,9 +37,9 @@ const productList = document.querySelector('#main-products-list');
   productList.innerHTML = productsArray.map(product =>
       `<li data-product-id="${product.Sku}" class="product">
           <div class="product__image" style="background-image:url('${product.Image}')">
-            <div data="${product.Name}" class="add-to-cart">dodaj do koszyka</div>
-            <button data="${product.Name}" class="remove-from-cart">usun</button>
-            </div>
+            <div class="add-to-cart">dodaj do koszyka</div>
+            <button class="remove-from-cart">usun</button>
+          </div>
           <div class="product__details">
               <p class="product__sku">${product.Sku}</p>
               <h3 class="product__title">${product.Name}</h3>
