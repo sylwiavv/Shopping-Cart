@@ -43,7 +43,6 @@ const renderCart = () => {
 
 const removeCartProduct = () => {
   const removeButtons = document.querySelectorAll('.remove-from-cart');
-  console.log(removeButtons);
   removeButtons.forEach(removeButton => {
     removeButton.addEventListener('click', (event) => {
       const parentButtonClicked = removeButton.parentElement.parentElement;
@@ -52,7 +51,9 @@ const removeCartProduct = () => {
       let productCart = cartArray.filter(item => {
           return item.Id === productId;
       });
-      
+
+      cartArray.pop(productCart);
+
       renderCart();
     })
   });
