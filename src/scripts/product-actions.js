@@ -11,7 +11,6 @@ addToCartButtons.forEach(addButton => {
     let productId = parentButtonClicked.dataset.productId;
     let productQty = parentButtonClicked.querySelector('.product__qty').value;
     productQty = parseInt(productQty);
-    let items = document.querySelectorAll('#main-products-cart-list .product');
 
     const cartItem = cartArray.filter(item => {
         return item.Id === productId;
@@ -24,7 +23,6 @@ addToCartButtons.forEach(addButton => {
       });
     } else {
       cartItem[0].Qty = productQty + cartItem[0].Qty;
-      console.log(cartItem[0]);
     }
     renderCart();
   })
@@ -36,8 +34,26 @@ const renderCart = () => {
     let product = productsArray.filter(obj => {
       return cartItem.Id === obj.Sku;
     })[0];
-    product.Qty = cartItem.Qty
+    product.Qty = cartItem.Qty;
     return product;
   })
   renderProducts(cartProductsList, products);
+  removeCartProduct();
+}
+
+const removeCartProduct = () => {
+  const removeButtons = document.querySelectorAll('.remove-from-cart');
+  console.log(removeButtons);
+  removeButtons.forEach(removeButton => {
+    removeButton.addEventListener('click', (event) => {
+      const parentButtonClicked = removeButton.parentElement.parentElement;
+      let productId = parentButtonClicked.dataset.productId;
+
+      let productCart = cartArray.filter(item => {
+          return item.Id === productId;
+      });
+      
+      renderCart();
+    })
+  });
 }

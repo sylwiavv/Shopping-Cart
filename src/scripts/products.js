@@ -9,7 +9,7 @@ const createProduct = (Name, Qty, Price, Sku, Image) => {
 };
 
 let productsArray = [
-    createProduct('Strelitzia Nicolai', 2, 30, 'Sku1', 'images/plants/strelitzia_nicolai.jpeg'),
+    createProduct('Strelitzia Nicolai', 1, 30, 'Sku1', 'images/plants/strelitzia_nicolai.jpeg'),
     createProduct('Alocasia Amazonian elephant ear',1, '12,67', 'Sku2', 'images/plants/alocasia_amazonian_elephant_ear.jpeg'),
     createProduct('Ficus Elastica', 1, 76, 'Sku3', 'images/plants/ficus_elastica.png'),
     createProduct('Monstera deliciosa thai constellation', 1, 73, 'Sku4', 'images/plants/monstera_deliciosa_thai_constellation.jpeg'),
