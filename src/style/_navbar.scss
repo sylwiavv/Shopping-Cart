@@ -25,23 +25,26 @@
     position: relative;
 
     .fa-shopping-cart {
-      font-size: 24px;
+      font-size: 20px;
     }
 
     .cart-ammount {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #fff;
       position: absolute;
-      bottom: 0px;
-      right: -1px;
-      font-weight: $font-weight__semibold;
-      height: 14px;
-      width: 14px;
-      font-size: 12px;
+      top: -8px;
+      right: -8px;
+      font-weight: $font-weight__bold;
+      height: 15px;
+      width: 15px;
       border-radius: 50%;
-      background: #bfe28e;
+      background: #ef05e2;
+
+      span {
+        color: #fff;
+        font-size: 8px;
+      }
     }
   }
 }

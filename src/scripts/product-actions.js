@@ -12,6 +12,12 @@ addToCartButtons.forEach(addButton => {
     let productQty = parentButtonClicked.querySelector('.product__qty').value;
     productQty = parseInt(productQty);
 
+    if (isNaN(productQty) || productQty <= 0 || typeof productQty === 'string') {
+      productQty = 1;
+    } else {
+      productQty = productQty;
+    }
+
     const cartItem = cartArray.filter(item => {
         return item.Id === productId;
     })
@@ -21,10 +27,12 @@ addToCartButtons.forEach(addButton => {
         Id: productId,
         Qty: productQty
       });
+
     } else {
       cartItem[0].Qty = productQty + cartItem[0].Qty;
     }
     renderCart();
+    updateNumberInCart();
   })
 })
 
@@ -55,6 +63,13 @@ const removeCartProduct = () => {
       cartArray.pop(productCart);
 
       renderCart();
+      updateNumberInCart();
     })
   });
+}
+
+const updateNumberInCart = () => {
+  const amountCart = document.querySelector('#cart-product-number');
+  amountCart.innerHTML = cartArray.length;
+  console.log(cartArray.length);
 }
