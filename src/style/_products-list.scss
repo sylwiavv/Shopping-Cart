@@ -36,10 +36,22 @@
   }
 }
 
+@include media-queries(phone-only) {
+  .main-box {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
 @include media-queries(tablet-portrait-up) {
   .main-box {
     h1 {
       color: hotpink;
+    }
+
+      ul {
+        grid-template-columns: repeat(2, 1fr);
     }
   }
 }
@@ -68,7 +80,7 @@
     }
 
     ul {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }

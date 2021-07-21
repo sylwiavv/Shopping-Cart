@@ -32,6 +32,7 @@ addToCartButtons.forEach(addButton => {
       cartItem[0].Qty = productQty + cartItem[0].Qty;
     }
     renderCart();
+    // totalCartPrice();
     updateNumberInCart();
   })
 })
@@ -71,5 +72,14 @@ const removeCartProduct = () => {
 const updateNumberInCart = () => {
   const amountCart = document.querySelector('#cart-product-number');
   amountCart.innerHTML = cartArray.length;
-  console.log(cartArray.length);
 }
+
+//TOTAL CART
+// const totalCartPrice = () => {
+//   const cartItems = document.querySelector('#main-products-cart-list');
+//
+//     const priceCartItems = cartItems.querySelectorAll('.product__price');
+//     const qtyCartItems = cartItems.querySelectorAll('.product__qty');
+//       let item = cartItems[i];
+//       console.log(priceCartItems[i]);
+// }
