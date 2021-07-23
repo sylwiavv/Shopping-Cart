@@ -1,86 +1,99 @@
-.main-box {
-  max-width: 980px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 48px;
-
-  h1 {
-    display: flex;
-    justify-content: center;
-    font-weight: $font-weight__semibold;
-  }
-
-  .products-list-container {
-    display: grid;
-    //grid-template-columns: repeat(3, 1fr);
-    grid-gap: 24px;
-  }
-
-  .total-price-container {
-    margin-top: $indent__m;
-    margin-bottom: $indent__m;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-size: 16px;
-    border-top: 1px solid;
-    padding-top: 16px;
-
-    span {
-      font-weight: $font-weight__semibold;
-      font-size: 28px;
-      display: inline-block;
-      margin-left: 8px;
-      color: #777;
-    }
-  }
-}
-
-@include media-queries(phone-only) {
-  .main-box {
-    ul {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-}
-
-@include media-queries(tablet-portrait-up) {
-  .main-box {
-    h1 {
-      color: hotpink;
-    }
-
-      ul {
-        grid-template-columns: repeat(2, 1fr);
-    }
-  }
-}
-
-
-@include media-queries(tablet-landscape-up) {
-  .main-box {
-    h1 {
-      color: green;
-    }
-  }
-}
-
-@include media-queries(tablet-landscape-up) {
-  .main-box {
-    h1 {
-      color: green;
-    }
-  }
-}
-
-@include media-queries(desktop-up) {
-  .main-box {
-    h1 {
-      color: cornflowerblue;
-    }
-
-    ul {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-}
+// .main-box {
+//   max-width: 1440px;
+//   margin-right: auto;
+//   margin-left: auto;
+//   padding-right: 24px;
+//   padding-left: 24px;
+//   margin-bottom: 48px;
+//   width: 100%;
+//
+//   h1 {
+//     display: flex;
+//     justify-content: center;
+//     font-weight: $font-weight__semibold;
+//   }
+//
+//   .products-list-container {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+//     grid-template-columns: repeat(2,1fr);
+//     grid-gap: 24px;
+//   }
+//
+//   .grid {
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   grid-gap: 24px;
+// }
+//
+//   .total-price-container {
+//     margin-top: $indent__m;
+//     margin-bottom: $indent__m;
+//     display: flex;
+//     align-items: center;
+//     justify-content: flex-end;
+//     font-size: 16px;
+//     border-top: 1px solid;
+//     padding-top: 16px;
+//
+//     span {
+//       font-weight: $font-weight__semibold;
+//       font-size: 28px;
+//       display: inline-block;
+//       margin-left: 8px;
+//       color: #777;
+//     }
+//   }
+// }
+//
+// .grid {
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   grid-gap: 24px;
+// }
+//
+// @include media-queries(phone-only) {
+//   .main-box {
+//     ul {
+//     }
+//   }
+// }
+//
+// @include media-queries(tablet-portrait-up) {
+//   .main-box {
+//     h1 {
+//       color: hotpink;
+//     }
+//
+//       ul {
+//     }
+//   }
+// }
+//
+//
+// @include media-queries(tablet-landscape-up) {
+//   .main-box {
+//     h1 {
+//       color: green;
+//     }
+//   }
+// }
+//
+// @include media-queries(tablet-landscape-up) {
+//   .main-box {
+//     h1 {
+//       color: green;
+//     }
+//   }
+// }
+//
+// @include media-queries(desktop-up) {
+//   .main-box {
+//     h1 {
+//       color: cornflowerblue;
+//     }
+//
+//     ul {
+//     }
+//   }
+// }

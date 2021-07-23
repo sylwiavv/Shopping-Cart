@@ -1,35 +1,228 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shopping Cart project</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600;800&   display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="main.bundle.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Shopping Cart project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600;800&   display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.bundle.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="shop-logo"></div>
-        <h1 class="title">Shop Name</h1>
-        <div class="cart-icon">
-            <img src="https://victorthemes.com/themes/seese/wp-content/themes/seese/assets/images/cart_icon.png" alt="cart_icon" width="18" height="20">
-            <div class="cart-ammount"><span id="cart-product-number">0</span></div>
+  <nav class="navbar">
+    <div class="shop-logo"></div>
+    <h1 class="title">Shop Name</h1>
+    <div class="cart-icon">
+      <img src="https://victorthemes.com/themes/seese/wp-content/themes/seese/assets/images/cart_icon.png" alt="cart_icon" width="18" height="20">
+      <div class="cart-ammount"><span id="cart-product-number">0</span></div>
+    </div>
+  </nav>
+  <div class="main-box">
+    <div id="product-list">
+      <h1>Our plants</h1>
+      <div id="main-products-list" class="products-list-container grid"></div>
+    </div>
+    <div id="cart-list">
+      <h1>Cart</h1>
+      <ul id="main-products-cart-list" class="products-list-container"></ul>
+      <div class="total-price-container">Total: <span id="total-price">$0</span></div>
+    </div>
+
+      <div class="products-container--inner grid">
+        <div class="featured-product--single">
+          <a class="with-custom-cursor active" data-text="Buy me!" href="/collections/all/products/burgundy-rubber-tree">
+            <div class="image-container">
+              <img class="lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/Burgundy_Rubber_Tree_Product_800x.png?v=1613948853"
+                data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/Burgundy_Rubber_Tree_Product_800x.png?v=1613948853" alt="'Burgundy' Rubber Tree" data-was-processed="true">
+              <img class="featured-product--hover-image lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/burgundy_rubber_tree_leaf_800x.png?v=1616555293"
+                data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/burgundy_rubber_tree_leaf_800x.png?v=1616555293" alt="'Burgundy' Rubber Tree - The Good Plant Co" data-was-processed="true">
+            </div>
+          </a>
+          <div class="product-information">
+            <div class="product-information--title flex">
+              <p class="product-title">'Burgundy' Rubber Tree</p>
+              <p class="product-price">From $44.95</p>
+            </div>
+          </div>
+          <div class="product-swatches"></div>
         </div>
-    </nav>
-    <div class="main-box">
-      <div id="product-list">
-        <h1>Our plants</h1>
-        <ul id="main-products-list" class="products-list-container"></ul>
-      </div>
-      <div id="cart-list">
-        <h1>Cart</h1>
-        <ul id="main-products-cart-list" class="products-list-container"></ul>
-        <div class="total-price-container">Total: <span id="total-price">$0</span></div>
+        <div class="featured-product--single">
+          <a class="with-custom-cursor active" data-text="Buy me!" href="/collections/all/products/alba-natural-hyacinth-basket">
+            <div class="image-container">
+              <img class="lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/Alba_Hyacinth_Basket_800x.jpg?v=1613948850" data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/Alba_Hyacinth_Basket_800x.jpg?v=1613948850"
+                alt="Alba Natural Hyacinth Basket" data-was-processed="true">
+              <img class="featured-product--hover-image lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/Alba_Hyacinth_Basket_InContext_800x.jpg?v=1613948861"
+                data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/Alba_Hyacinth_Basket_InContext_800x.jpg?v=1613948861" alt="Alba Natural Hyacinth Basket - The Good Plant Co" data-was-processed="true">
+            </div>
+          </a>
+          <div class="product-information">
+            <div class="product-information--title flex">
+              <p class="product-title">Alba Natural Hyacinth Basket</p>
+              <p class="product-price">From $49.95</p>
+            </div>
+          </div>
+          <div class="product-swatches"></div>
+        </div>
+        <div class="featured-product--single">
+          <a class="with-custom-cursor active" data-text="Buy me!" href="/collections/all/products/alocasia-macrorrhizos">
+            <div class="image-container">
+
+
+            </div>
+          </a>
+          <div class="product-information">
+            <div class="product-information--title flex">
+              <p class="product-title">Alocasia Macrorrhizos</p>
+              <p class="product-price">$0.00</p>
+            </div>
+            <div class="small">Now Growing</div>
+          </div>
+          <div class="product-swatches"></div>
+        </div>
+        <div class="featured-product--single">
+          <a class="with-custom-cursor active" data-text="Buy me!" href="/collections/all/products/alocasia-morocco">
+            <div class="image-container">
+              <img class="lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/GoodPlantCo7.7.2123741_800x.jpg?v=1626221554" data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/GoodPlantCo7.7.2123741_800x.jpg?v=1626221554"
+                alt="Alocasia Morocco" data-was-processed="true">
+              <img class="featured-product--hover-image lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/GoodPlantCo7.7.2123743_800x.jpg?v=1626221554"
+                data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/GoodPlantCo7.7.2123743_800x.jpg?v=1626221554" alt="Alocasia Morocco" data-was-processed="true">
+            </div>
+          </a>
+          <div class="product-information">
+            <div class="product-information--title flex">
+              <p class="product-title">Alocasia Morocco</p>
+              <p class="product-price">$59.95</p>
+            </div>
+          </div>
+          <div class="product-swatches"></div>
+        </div>
+        <div class="featured-product--single">
+          <a class="with-custom-cursor active" data-text="Buy me!" href="/collections/all/products/alocasia-plumbea">
+            <div class="image-container"></div>
+          </a>
+          <div class="product-information">
+            <div class="product-information--title flex">
+              <p class="product-title">Alocasia plumbea</p>
+              <p class="product-price">$0.00</p>
+            </div>
+            <div class="small">Now Growing</div>
+          </div>
+          <div class="product-swatches"></div>
+        </div>
+        <div class="featured-product--single">
+          <a class="with-custom-cursor active" data-text="Buy me!" href="/collections/all/products/alocasia-stingray">
+            <div class="image-container">
+              <img class="lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/Small_Alocasia_Stingray_800x.jpg?v=1616564440" data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/Small_Alocasia_Stingray_800x.jpg?v=1616564440"
+                alt="Alocasia Stingray" data-was-processed="true">
+              <img class="featured-product--hover-image lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/Alocasia_Stingray_Leaf_800x.jpg?v=1616564440"
+                data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/Alocasia_Stingray_Leaf_800x.jpg?v=1616564440" alt="Alocasia Stingray - The Good Plant Co" data-was-processed="true">
+            </div>
+          </a>
+          <div class="product-information">
+            <div class="product-information--title flex">
+              <p class="product-title">Alocasia Stingray</p>
+              <p class="product-price">From $39.95</p>
+            </div>
+            <div class="small">Now Growing</div></div>
+          <div class="product-swatches"></div>
+        </div>
+        <div class="featured-product--single">
+          <a class="with-custom-cursor active" data-text="Buy me!" href="/collections/all/products/alocasia-zebrina">
+            <div class="image-container">
+              <img class="lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/AlocasiaZebrinaLarge_800x.jpg?v=1616564181" data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/AlocasiaZebrinaLarge_800x.jpg?v=1616564181"
+                alt="Alocasia Zebrina" data-was-processed="true">
+              <img class="featured-product--hover-image lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/Alocasia_Zebrina_Leaf_800x.jpg?v=1616564181"
+                data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/Alocasia_Zebrina_Leaf_800x.jpg?v=1616564181" alt="Alocasia Zebrina - The Good Plant Co" data-was-processed="true">
+            </div>
+          </a>
+          <div class="product-information">
+            <div class="product-information--title flex">
+              <p class="product-title">Alocasia Zebrina</p>
+              <p class="product-price">From $49.95</p>
+            </div>
+            <div class="small">Now Growing</div>
+          </div>
+          <div class="product-swatches"></div>
+        </div>
+        <div class="featured-product--single">
+          <a class="with-custom-cursor active" data-text="Buy me!" href="/collections/all/products/aloe-aristata">
+            <div class="image-container">
+              <img class="lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/GoodPlantCo7.7.2123669_800x.jpg?v=1626218036" data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/GoodPlantCo7.7.2123669_800x.jpg?v=1626218036"
+                alt="Aloe Aristata" data-was-processed="true">
+              <img class="featured-product--hover-image lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/GoodPlantCo7.7.2123670_800x.jpg?v=1626218036"
+                data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/GoodPlantCo7.7.2123670_800x.jpg?v=1626218036" alt="Aloe Aristata" data-was-processed="true">
+            </div>
+          </a>
+          <div class="product-information">
+            <div class="product-information--title flex">
+              <p class="product-title">Aloe Aristata</p>
+              <p class="product-price">$29.95</p>
+            </div>
+          </div>
+          <div class="product-swatches"></div>
+        </div>
+        <div class="featured-product--single">
+          <a class="with-custom-cursor active" data-text="Buy me!" href="/collections/all/products/aloe-flow">
+            <div class="image-container">
+              <img class="lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/GoodPlantCo7.7.2123658_800x.jpg?v=1626218108" data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/GoodPlantCo7.7.2123658_800x.jpg?v=1626218108"
+                alt="Aloe Flow" data-was-processed="true">
+              <img class="featured-product--hover-image lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/GoodPlantCo7.7.2123660_800x.jpg?v=1626218108"
+                data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/GoodPlantCo7.7.2123660_800x.jpg?v=1626218108" alt="Aloe Flow" data-was-processed="true">
+            </div>
+          </a>
+          <div class="product-information">
+            <div class="product-information--title flex">
+              <p class="product-title">Aloe Flow</p>
+              <p class="product-price">$29.95</p>
+            </div>
+          </div>
+          <div class="product-swatches"></div>
+        </div>
+
+        <div class="featured-product--single">
+          <a class="with-custom-cursor active" data-text="Buy me!" href="/collections/all/products/amate-umbrella">
+            <div class="image-container">
+              <img class="lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/TPP_ShopImages_UmbrellaTree_18.1.4_800x.jpg?v=1616552261"
+                data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/TPP_ShopImages_UmbrellaTree_18.1.4_800x.jpg?v=1616552261" alt="Amate Umbrella" data-was-processed="true">
+              <img class="featured-product--hover-image lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/TPP_ShopImages__0004s_0006_3_b42e7b1d-6bc3-481f-b6e4-9ee0a4c7cebc_800x.jpg?v=1616552261"
+                data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/TPP_ShopImages__0004s_0006_3_b42e7b1d-6bc3-481f-b6e4-9ee0a4c7cebc_800x.jpg?v=1616552261" alt="Amate Umbrella - The Good Plant Co" data-was-processed="true">
+            </div>
+          </a>
+          <div class="product-information">
+            <div class="product-information--title flex">
+              <p class="product-title">Amate Umbrella</p>
+              <p class="product-price">$64.95</p>
+            </div>
+          </div>
+          <div class="product-swatches"></div>
+        </div>
+
+        <div class="featured-product--single">
+          <a class="with-custom-cursor active" data-text="Buy me!" href="/collections/all/products/amazonian-elephant-ear">
+            <div class="image-container">
+              <img class="lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/AmazonianElephantEarProductcopy_800x.jpg?v=1613948852"
+                data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/AmazonianElephantEarProductcopy_800x.jpg?v=1613948852" alt="Amazonian Elephant Ear" data-was-processed="true">
+                <img class="featured-product--hover-image lazy loaded" src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/AmazonianElephantEarCloseUp_800x.jpg?v=1616473543"
+                data-src="//cdn.shopify.com/s/files/1/0271/1430/7618/products/AmazonianElephantEarCloseUp_800x.jpg?v=1616473543" alt="Amazonian Elephant Ear - The Good Plant Co" data-was-processed="true">
+            </div>
+          </a>
+          <div class="product-information">
+            <div class="product-information--title flex">
+              <p class="product-title">Amazonian Elephant Ear</p>
+              <p class="product-price">From $44.95</p>
+            </div>
+            <div class="small">Now Growing</div>
+          </div>
+          <div class="product-swatches"></div>
+        </div>
       </div>
     </div>
-    <script src="main.bundle.js" async></script>
+
+
+  <script src="main.bundle.js" async></script>
 </body>
+
 </html>

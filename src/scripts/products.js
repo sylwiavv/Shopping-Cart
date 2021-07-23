@@ -36,18 +36,20 @@ let productsArray = [
 
 const renderProducts = (container, products) => {
   container.innerHTML = products.map(product =>
-      `<li data-product-id="${product.Sku}" class="product">
-          <div class="product__image" style="background-image:url('${product.Image}')">
-            <div data="${product.Name}" class="add-to-cart">dodaj do koszyka</div>
-            <button data="${product.Name}" class="remove-from-cart">usun</button>
-            </div>
-          <div class="product__details">
-              <p class="product__sku">${product.Sku}</p>
-              <h3 class="product__title">${product.Name}</h3>
-              <input class="product__qty" type="number" value="${product.Qty}">
-              <p class="product__price">$${product.Price}</p>
+      `<div class="featured-product--single">
+        <a class="with-custom-cursor active" data-text="Buy me!" href="/collections/all/products/burgundy-rubber-tree">
+          <div class="image-container">
+            <img class="lazy loaded" src="${product.Image}" alt="'Burgundy' Rubber Tree" data-was-processed="true">
           </div>
-      </li>`
+        </a>
+        <div class="product-information">
+          <div class="product-information--title flex">
+            <p class="product-title">${product.Name}</p>
+            <p class="product-price">$${product.Price}</p>
+            <p class="product__qty">${product.Qty}</p>
+          </div>
+        </div>
+      </div>`
   ).join('')
 }
 const producstList = document.querySelector('#main-products-list');
