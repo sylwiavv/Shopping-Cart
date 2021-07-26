@@ -7,9 +7,9 @@ const cartArray = [];
 addToCartButtons.forEach(addButton => {
   addButton.addEventListener('click', (event) => {
     const addButtonClicked = event.target;
-    const parentButtonClicked = addButtonClicked.parentElement.parentElement;
+    const parentButtonClicked = addButtonClicked.parentElement.parentElement.parentElement;
     let productId = parentButtonClicked.dataset.productId;
-    let productQty = parentButtonClicked.querySelector('.product__qty').value;
+    let productQty = parentButtonClicked.querySelector('.product-information__qty');
     productQty = parseInt(productQty);
 
     if (isNaN(productQty) || productQty <= 0 || typeof productQty === 'string') {

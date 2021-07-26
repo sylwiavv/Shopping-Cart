@@ -90,3 +90,41 @@
 //     font-size: $font-size__l;
 //   }
 // }
+
+.product-information {
+  &__to-cart {
+    .label {
+      font-size: 14px;
+      margin-bottom: $indent__xs;
+    }
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    letter-spacing: .4px;
+    font-size: $font-size__base;
+    font-weight: $font-weight__semibold;
+  }
+}
+
+
+@include media-queries(phone-only) {
+
+}
+
+@include media-queries(tablet-portrait-up) {
+
+}
+
+@include media-queries(tablet-landscape-up) {
+
+}
+
+@include media-queries(tablet-landscape-up) {
+
+}
+
+@include media-queries(desktop-up) {
+
+}
