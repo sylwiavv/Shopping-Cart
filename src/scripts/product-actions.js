@@ -1,6 +1,5 @@
-const cartProductsList = document.querySelector('#main-products-cart-list');
 const addToCartButtons = document.querySelectorAll('.add-to-cart');
-
+const productList = document.querySelectorAll('.products-list-container');
 const cartArray = [];
 
 // ADD CLICK
@@ -9,7 +8,7 @@ addToCartButtons.forEach(addButton => {
     const addButtonClicked = event.target;
     const parentButtonClicked = addButtonClicked.parentElement.parentElement.parentElement;
     let productId = parentButtonClicked.dataset.productId;
-    let productQty = parentButtonClicked.querySelector('.product-information__qty');
+    let productQty = parentButtonClicked.querySelector('.product-information__qty').value;
     productQty = parseInt(productQty);
 
     if (isNaN(productQty) || productQty <= 0 || typeof productQty === 'string') {
@@ -31,6 +30,7 @@ addToCartButtons.forEach(addButton => {
     } else {
       cartItem[0].Qty = productQty + cartItem[0].Qty;
     }
+
     renderCart();
     // totalCartPrice();
     updateNumberInCart();
@@ -45,8 +45,9 @@ const renderCart = () => {
     })[0];
     product.Qty = cartItem.Qty;
     return product;
-  })
-  renderProducts(cartProductsList, products);
+  });
+
+  renderCartProducts(products);
   removeCartProduct();
 }
 

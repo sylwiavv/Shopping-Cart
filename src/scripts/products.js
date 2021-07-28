@@ -33,6 +33,8 @@ let productsArray = [
 // Make html list with products
 // const renderProducts = () => {
 // }
+const producstList = document.querySelector('#main-products-list');
+const cartProductsList = document.querySelector('#main-products-cart-list');
 
 const renderProducts = (container, products) => {
   container.innerHTML = products.map(product =>
@@ -41,7 +43,6 @@ const renderProducts = (container, products) => {
             <img src="${product.Image}" alt="${product.Name}">
             <div class="product-actions">
               <div data="${product.Name}" class="add-to-cart">dodaj do koszyka</div>
-              <button data="${product.Name}" class="remove-from-cart">usun</button>
             </div>
           </div>
           <div class="product-information">
@@ -56,5 +57,40 @@ const renderProducts = (container, products) => {
       </li>`
   ).join('')
 }
-const producstList = document.querySelector('#main-products-list');
+
+const renderCartProducts = (products) => {
+  cartProductsList.innerHTML = products.map(product =>
+      `<li data-product-id="${product.Sku}" class="product">
+          <div class="product__image-container">
+            <img src="${product.Image}" alt="${product.Name}">
+          </div>
+          <div class="product-information">
+            <p class="product-information__sku">${product.Sku}</p>
+            <p class="product-information__title">${product.Name}</p>
+            <div class="product-information__to-cart">
+              <label class="label" for="qty"><span>Ilość</span></label>
+              <input class="product-information__qty" name="qty" type="number" value="${product.Qty}">
+              </div>
+          </div>
+          <p class="product-information__price">$${product.Price}</p>
+          <div class="product-actions">
+            <div data="${product.Name}" class="remove-from-cart"></div>
+          </div>
+      </li>`
+  ).join('')
+}
+// const alphabeticalSort = compare(a, b) => {
+//   const bandA = a.Name.toUpperCase();
+//   const bandB = b.Name.toUpperCase();
+//
+//   let comparison = 0;
+//   if (bandA > bandB) {
+//     comparison = 1;
+//   } else if (bandA < bandB) {
+//     comparison = -1;
+//   }
+//   return comparison;
+// }
+//
+// productsArray.sort(compare);
 renderProducts(producstList, productsArray);

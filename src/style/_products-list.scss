@@ -1,60 +1,57 @@
-// .main-box {
-//   max-width: 1440px;
-//   margin-right: auto;
-//   margin-left: auto;
-//   padding-right: 24px;
-//   padding-left: 24px;
-//   margin-bottom: 48px;
-//   width: 100%;
-//
-//   h1 {
-//     display: flex;
-//     justify-content: center;
-//     font-weight: $font-weight__semibold;
-//   }
-//
-//   .products-list-container {
-//     display: grid;
-//     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-//     grid-template-columns: repeat(2,1fr);
-//     grid-gap: 24px;
-//   }
-//
-//   .grid {
-//   display: grid;
-//   grid-template-columns: repeat(2, 1fr);
-//   grid-gap: 24px;
-// }
-//
-//   .total-price-container {
-//     margin-top: $indent__m;
-//     margin-bottom: $indent__m;
-//     display: flex;
-//     align-items: center;
-//     justify-content: flex-end;
-//     font-size: 16px;
-//     border-top: 1px solid;
-//     padding-top: 16px;
-//
-//     span {
-//       font-weight: $font-weight__semibold;
-//       font-size: 28px;
-//       display: inline-block;
-//       margin-left: 8px;
-//       color: #777;
-//     }
-//   }
-// }
-//
-// .grid {
-//   display: grid;
-//   grid-template-columns: repeat(2, 1fr);
-//   grid-gap: 24px;
-// }
-//
-
 .products-list-container {
   display: grid;
+  justify-content: center;
+
+  &.cart {
+    grid-template-columns: 1fr;
+
+    .product {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &__image-container,
+      &-information,
+      &-information__price,
+      &-actions {
+
+      }
+
+      &-information__price,
+      &-actions {
+        width: 16%;
+      }
+
+      &-information {
+        padding-left: $indent__l;
+        padding-top: $indent__l;
+        padding-bottom: $indent__l;
+        width: 64%;
+      }
+
+      &__image-container {
+        height: 120px;
+        width: 120px;
+      }
+
+      &-information {
+      }
+    }
+  }
+}
+
+.cart-container {
+  width: 75%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.total-price-container {
+  margin-top: $indent__xl;
+
+  span {
+    font-weight: $font-weight__bold;
+  }
 }
 
 @include media-queries(phone-only) {
@@ -89,7 +86,7 @@
 
 @include media-queries(tablet-landscape-up) {
   .products-list-container {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 240px);
   }
 }
 
