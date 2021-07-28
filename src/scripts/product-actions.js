@@ -49,6 +49,7 @@ const renderCart = () => {
 
   renderCartProducts(products);
   removeCartProduct();
+  totalCartPrice();
 }
 
 const removeCartProduct = () => {
@@ -75,12 +76,23 @@ const updateNumberInCart = () => {
   amountCart.innerHTML = cartArray.length;
 }
 
-//TOTAL CART
-// const totalCartPrice = () => {
-//   const cartItems = document.querySelector('#main-products-cart-list');
-//
-//     const priceCartItems = cartItems.querySelectorAll('.product__price');
-//     const qtyCartItems = cartItems.querySelectorAll('.product__qty');
-//       let item = cartItems[i];
-//       console.log(priceCartItems[i]);
-// }
+//Total cart price
+const totalCartPrice = () => {
+  const cartItems = document.querySelectorAll('#main-products-cart-list > .product');
+  if ( cartItems.length ) {
+    let total = 0;
+     for ( var i = 0; i < cartItems.length; i++) {
+       let prodCart = cartItems[i];
+       let prodCartPrice = prodCart.querySelectorAll('.product-information__price')[0];
+       let price = parseFloat(prodCartPrice.innerText.replace('$', ''));
+       let prodCartQty = prodCart.querySelectorAll('.product-information__qty')[0];
+       let qty = prodCartQty.value;
+       qty = parseInt(qty, 10);
+       total = total + (price * qty);
+     }
+     document.querySelectorAll('#total-price')[0].innerHTML = '$' + total;
+
+   } else if (cartItems.length === 0) {
+     document.querySelectorAll('#total-price')[0].innerHTML = '$' + 0;
+   }
+}
