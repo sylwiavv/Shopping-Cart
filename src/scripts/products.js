@@ -79,18 +79,18 @@ const renderCartProducts = (products) => {
       </li>`
   ).join('')
 }
-// const alphabeticalSort = compare(a, b) => {
-//   const bandA = a.Name.toUpperCase();
-//   const bandB = b.Name.toUpperCase();
-//
-//   let comparison = 0;
-//   if (bandA > bandB) {
-//     comparison = 1;
-//   } else if (bandA < bandB) {
-//     comparison = -1;
-//   }
-//   return comparison;
-// }
-//
-// productsArray.sort(compare);
+const alphabeticalSort = compare(a, b) => {
+  const bandA = a.Name.toUpperCase();
+  const bandB = b.Name.toUpperCase();
+
+  let comparison = 0;
+  if (bandA > bandB) {
+    comparison = 1;
+  } else if (bandA < bandB) {
+    comparison = -1;
+  }
+  return comparison;
+}
+
+productsArray.sort(compare);
 renderProducts(producstList, productsArray);
