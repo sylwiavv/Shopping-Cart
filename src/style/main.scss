@@ -8,6 +8,7 @@
 @import "navbar";
 @import "products-list";
 @import "product-item";
+@import "minicart";
 
 * {
     font-family: $main-font;
@@ -15,6 +16,31 @@
 
 body {
     background-color: $white-color;
+
+    &:after {
+      visibility: hidden;
+      transition: opacity .15s linear;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 99;
+      display: block;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      right: 0;
+      top: 72px;
+      content: '';
+    }
+
+    &.not-scroll {
+      overflow-y: hidden;
+
+      &:after {
+        position: fixed;
+        opacity: .3;
+        pointer-events: auto;
+        visibility: visible;
+      }
+    }
 }
 
 img {

@@ -5,6 +5,8 @@
   border-bottom: 1px solid $border__color;
   padding-left: $indent__l;
   padding-right: $indent__l;
+  position: relative;
+  z-index: 1000;
 
   .title {
     margin-right: auto;

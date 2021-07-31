@@ -1,0 +1,29 @@
+.cart-container {
+  border-top: 1px solid $border__color;
+  display: none;
+  width: 460px;
+  max-width: 460px;
+  position: fixed;
+  top: 79px;
+  right: 0;
+  bottom: 0;
+  transition: all 400ms;
+  transform: translateX(100%);
+  display: block;
+  z-index: 100;
+  background: $white-color;
+}
+
+.cart-container.active {
+  display: grid;
+  transform: translateX(0);
+  overflow: scroll;
+}
+
+.minicart-wrapper {
+  background: red;
+
+  &.active {
+    background: gold;
+  }
+}
