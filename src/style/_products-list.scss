@@ -86,7 +86,7 @@
 
 @include media-queries(tablet-landscape-up) {
   .products-list-container {
-    grid-template-columns: repeat(4, 240px);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

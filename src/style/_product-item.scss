@@ -15,8 +15,10 @@
       }
 
       &__image-container {
-        min-height: 240px;
-        min-width: 240px;
+        padding-bottom: 100%;
+        max-width: 100%;
+        max-height: 240px;
+        max-width: 240px;
       }
     }
   }
@@ -115,15 +117,15 @@
       font-weight: $font-weight__semibold;
     }
   }
-  
+
   .products-list-container {
     &:not(.cart) {
       .product {
           &__image-container {
-          padding-bottom: 100%;
-          max-width: 100%;
-          min-height: unset;
-          min-width: unset;
+          // padding-bottom: 100%;
+          // max-width: 100%;
+          // min-height: unset;
+          // min-width: unset;
         }
       }
     }
