@@ -1,5 +1,4 @@
 const body = document.body;
-const html = document.querySelector("html");
 const addToCartButtons = document.querySelectorAll('.add-to-cart');
 const productList = document.querySelectorAll('.products-list-container');
 const cartArray = [];
@@ -102,15 +101,17 @@ const parent = document.querySelector('.minicart-wrapper');
 const child = document.querySelector('#cart-list');
 
 parent.addEventListener('click', (e) => {
-   if(e.target !== e.currentTarget){
-     console.log("child clicked");
+   if(e.target !== e.currentTarget) {
      child.classList.add("active");
    } else {
-     console.log("parent clicked");
      parent.classList.toggle('active');
      body.classList.toggle('not-scroll');
    }
-  });
+});
 
-// overflow: hidden;
-// pointer-events: none;
+body.addEventListener('click', (e) => {
+   if(e.target == e.currentTarget && body.classList.contains('not-scroll')) {
+     body.classList.remove('not-scroll');
+     parent.classList.remove('active');
+   }
+});
