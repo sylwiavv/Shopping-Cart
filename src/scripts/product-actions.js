@@ -20,7 +20,7 @@ addToCartButtons.forEach(addButton => {
 
     const cartItem = cartArray.filter(item => {
         return item.Id === productId;
-    })
+    });
 
     if (!cartItem.length) {
       cartArray.push({
@@ -33,6 +33,7 @@ addToCartButtons.forEach(addButton => {
     }
 
     renderCart();
+    updateQtyValueInCart();
     updateNumberInCart();
   })
 })
@@ -46,7 +47,7 @@ const renderCart = () => {
     product.Qty = cartItem.Qty;
     return product;
   });
-
+  
   renderCartProducts(products);
   removeCartProduct();
   totalCartPrice();
@@ -115,3 +116,50 @@ body.addEventListener('click', (e) => {
      parent.classList.remove('active');
    }
 });
+
+const increase = document.querySelectorAll('#increase');
+const decrease = document.querySelectorAll('#decrease');
+
+const updateCartProductQty = (productId, itemQty) => {
+  let productCart = cartArray.filter(item => {
+    return item.Id === productId;
+  })[0];
+  productCart.Qty = itemQty;
+}
+
+const updateQtyValueInCart = () => {
+ const increase = document.querySelectorAll('#increase');
+ const decrease = document.querySelectorAll('#decrease');
+
+increase.forEach((increaseButton) => {
+  increaseButton.addEventListener('click', (e) => {
+      const clickedButton = event.target;
+      let input = e.target.parentNode.querySelector('.cart_qty');
+      let parentButtonClicked = clickedButton.parentElement.parentElement.parentElement.parentElement;
+      let productId = parentButtonClicked.dataset.productId;
+      input = parseInt(input.value, 10);
+      input = isNaN(input) ? 0 : input;
+      input++;
+      e.target.parentNode.querySelector('.cart_qty').value = input;
+      totalCartPrice();
+      updateCartProductQty(productId, input);
+  });
+});
+
+decrease.forEach((decreaseButton) => {
+  decreaseButton.addEventListener('click', (e) => {
+      const clickedButton = event.target;
+      let input = e.target.parentNode.querySelector('.cart_qty');
+      let parentButtonClicked = clickedButton.parentElement.parentElement.parentElement.parentElement;
+      let productId = parentButtonClicked.dataset.productId;
+      input = parseInt(input.value, 10);
+      input = isNaN(input) ? 0 : input;
+      input < 1 ? input = 1 : '';
+      input--;
+      e.target.parentNode.querySelector('.cart_qty').value = input;
+      totalCartPrice();
+      updateCartProductQty(productId, input);
+      // updateCartProductQty();
+  });
+});
+}

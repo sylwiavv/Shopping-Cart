@@ -68,9 +68,12 @@ const renderCartProducts = (products) => {
             <p class="product-information__sku">${product.Sku}</p>
             <p class="product-information__title">${product.Name}</p>
             <div class="product-information__to-cart">
-              <label class="label" for="qty"><span>Ilość</span></label>
-              <input class="product-information__qty" name="qty" type="number" value="${product.Qty}">
-              </div>
+            <form>
+              <div class="value-button" id="decrease" value="Decrease Value">-</div>
+              <input class="product-information__qty cart_qty ${product.Name}" name="qty" type="number" value="${product.Qty}">
+              <div class="value-button" id="increase" value="Increase Value">+</div>
+            </form>
+            </div>
           </div>
           <p class="product-information__price">$${product.Price}</p>
           <div class="product-actions">
