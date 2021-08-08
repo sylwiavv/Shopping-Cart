@@ -1,15 +1,20 @@
 .navbar {
   background-color: $white-color;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0, .07);
   display: flex;
   align-items: center;
   border-bottom: 1px solid $border__color;
   padding-left: $indent__l;
   padding-right: $indent__l;
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1000;
 
   .title {
     margin-right: auto;
+    font-weight: $font-weight__semibold;
+    font-size: $font-size__l;
+    text-transform: lowercase;
   }
 
   .shop-logo {
@@ -22,7 +27,6 @@
   .cart-icon {
     position: relative;
     margin-right: 8px;
-    // overflow: hidden;
     pointer-events: none;
 
     .fa-shopping-cart {

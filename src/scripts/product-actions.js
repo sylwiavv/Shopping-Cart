@@ -47,7 +47,7 @@ const renderCart = () => {
     product.Qty = cartItem.Qty;
     return product;
   });
-  
+
   renderCartProducts(products);
   removeCartProduct();
   totalCartPrice();
@@ -116,9 +116,6 @@ body.addEventListener('click', (e) => {
      parent.classList.remove('active');
    }
 });
-
-const increase = document.querySelectorAll('#increase');
-const decrease = document.querySelectorAll('#decrease');
 
 const updateCartProductQty = (productId, itemQty) => {
   let productCart = cartArray.filter(item => {
