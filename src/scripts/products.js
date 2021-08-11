@@ -42,7 +42,8 @@ const renderProducts = (container, products) => {
           <div class="product__image-container">
             <img src="${product.Image}" alt="${product.Name}">
             <div class="product-actions">
-              <div data="${product.Name}" class="add-to-cart">dodaj do koszyka</div>
+              <div data="${product.Name}" class="add-to-cart"></div>
+              <div class="before-add-to-cart"></div>
             </div>
           </div>
           <div class="product-information">
