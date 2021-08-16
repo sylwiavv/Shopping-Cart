@@ -23,6 +23,7 @@
         height: 30px;
         width: 30px;
 
+
         .before-add-to-cart {
           display: block;
           background-image: url(../images/icons/icon_shopping-cart.svg);
@@ -33,7 +34,9 @@
           margin: 0;
           padding: 0;
           width: 100%;
-          height: 100%
+          height: 100%;
+          opacity: 1;
+          transition: opacity .7s ease-out;
         }
 
         &:hover {
@@ -46,15 +49,24 @@
 
             width: 100%;
             height: 100%;
+            transition: opacity 0.5s ease-out;
+            opacity: 1;
 
             &:before {
               content: '+';
+              opacity: 1;
             }
           }
 
           .before-add-to-cart {
-            display: none;
+            opacity: 0;
+            width: 0;
+            transition: opacity 0.5s ease-out;
           }
+        }
+
+        .add-to-cart {
+          opacity: 0;
         }
       }
 
