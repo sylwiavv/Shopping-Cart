@@ -31,8 +31,6 @@ let productsArray = [
 ];
 
 // Make html list with products
-// const renderProducts = () => {
-// }
 const producstList = document.querySelector('#main-products-list');
 const cartProductsList = document.querySelector('#main-products-cart-list');
 

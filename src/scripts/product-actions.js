@@ -66,15 +66,21 @@ const removeCartProduct = () => {
 
       cartArray.pop(productCart);
 
-      renderCart();
       updateNumberInCart();
+      renderCart();
     })
   });
 }
 
 const updateNumberInCart = () => {
   const amountCart = document.querySelector('#cart-product-number');
+  const cartIsEmpty = document.querySelector('.cart-list__empty');
   amountCart.innerHTML = cartArray.length;
+  if (cartArray.length > 0) {
+    cartIsEmpty.remove();
+  } else {
+    cartIsEmpty.appendChild();
+  }
 }
 
 //Total cart price
@@ -156,7 +162,6 @@ decrease.forEach((decreaseButton) => {
       e.target.parentNode.querySelector('.cart_qty').value = input;
       totalCartPrice();
       updateCartProductQty(productId, input);
-      // updateCartProductQty();
   });
 });
 }
