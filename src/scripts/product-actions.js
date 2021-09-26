@@ -35,8 +35,8 @@ addToCartButtons.forEach(addButton => {
     renderCart();
     updateQtyValueInCart();
     updateNumberInCart();
-  })
-})
+  });
+});
 
 // Render products in cart
 const renderCart = () => {

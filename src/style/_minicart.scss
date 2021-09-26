@@ -2,7 +2,42 @@
   &:hover {
     cursor: pointer;
   }
-  
+
+  .cart-icon {
+    position: relative;
+    margin-right: 8px;
+    pointer-events: none;
+
+    .cart-ammount {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: -2px;
+      right: -8px;
+      font-weight: $font-weight__semibold;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      background: #000;
+
+      span {
+        color: #fff;
+        font-size: 8px;
+      }
+    }
+  }
+
+  .cart-icon {
+    background-image: url(images/icons/icon_minicart.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px;
+
+    width: 30px;
+    height: 30px;
+  }
+
   .cart-container {
     border-top: 1px solid $border__color;
     display: none;
@@ -12,8 +47,8 @@
     top: 59px;
     right: 0;
     bottom: 0;
-    transition: all 400ms;
-    transform: translateX(100%);
+    transition: transform .5s;
+    transform: translateX(150%);
     display: block;
     z-index: 100;
     background: $white-color;
