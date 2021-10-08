@@ -1,0 +1,46 @@
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+body {
+  font-size: 1.36rem;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.7rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+h4 {
+  font-size: 2.1rem;
+}
+
+h5 {
+  font-size: 1.8rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+}

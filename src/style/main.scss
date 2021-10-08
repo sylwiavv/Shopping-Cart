@@ -1,4 +1,5 @@
 @import "variables/fonts";
+@import "variables/typography";
 @import "variables/reset-css";
 @import "variables/indents";
 @import "variables/colors";
@@ -11,45 +12,9 @@
 @import "minicart";
 
 * {
-    font-family: $main-font;
-}
-
-body {
-    background-color: $white-color;
-
-    &:after {
-      visibility: hidden;
-      transition: opacity .15s linear;
-      background-color: rgba(0, 0, 0, 0.9);
-      z-index: 99;
-      display: block;
-      bottom: 0;
-      left: 0;
-      opacity: 0;
-      right: 0;
-      top: 0;
-      content: '';
-    }
-
-    &.not-scroll {
-      overflow-y: hidden;
-
-      &:after {
-        position: fixed;
-        opacity: .3;
-        pointer-events: auto;
-        visibility: visible;
-      }
-    }
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-*, ::after, ::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: $main-font;
+  line-height: 1.4em;
 }
 
 input {
@@ -61,33 +26,42 @@ input {
   border-radius: 4px;
   width: 56px;
   height: 24px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
 }
 
-.featured-product--single .image-container .featured-product--hover-image {
-    opacity: 0;
-    z-index: 2;
-    transition: .3s ease opacity;
-}
-.featured-product--single .image-container img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    transform: translate(-50%,-50%);
-    transition: transform .75s ease;
+body {
+  background-color: $white-color;
+
+  &.not-scroll {
+    overflow-y: hidden;
+
+    &:after {
+      opacity: .3;
+      pointer-events: auto;
+    }
+
+    .navbar {
+      .cart-icon {
+        pointer-events: none;
+      }
+    }
+  }
 }
 
-.featured-product--single .image-container {
-    width: 100%;
-    padding-top: 100%;
-    overflow: hidden;
-    position: relative;
+img {
+  max-width: 100%;
+  height: auto;
 }
-.featured-product--single:hover .image-container .featured-product--hover-image {
-    opacity: 1;
+
+*, ::after, ::before {
+    box-sizing: border-box;
 }
 
 .main-box {
@@ -98,12 +72,4 @@ input {
   padding-left: 24px;
   margin-bottom: 48px;
   width: 100%;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-.products-container--inner {
-  background: gold;
 }

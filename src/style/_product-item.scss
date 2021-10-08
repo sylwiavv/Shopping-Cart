@@ -2,6 +2,11 @@
   //only products
   &:not(.cart) {
     .product {
+      &__image-container {
+        padding-bottom: 100%;
+        max-width: 100%;
+      }
+
       &-information {
         &__price {
           grid-row: span 2;
@@ -69,30 +74,6 @@
           opacity: 0;
         }
       }
-
-      &__image-container {
-        padding-bottom: 100%;
-        max-width: 100%;
-      }
-    }
-  }
-
-  &.cart {
-    .product {
-      &:nth-child(odd) {
-        background: $gray-color__primary;
-      }
-      .remove-from-cart {
-        background-image: url(images/icons/icon_delete.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 20px;
-        vertical-align: middle;
-        margin: 0;
-        padding: 0;
-        width: 24px;
-        height: 24px;
-      }
     }
   }
 }
@@ -118,13 +99,13 @@
     grid-template-columns: repeat(2, 1fr);
 
     .label {
-        span {
-          display: block;
-          font-size: 14px;
-          margin-bottom: $indent__s;
+      span {
+        display: block;
+        font-size: 12px;
+        margin-bottom: $indent__xs;
 
-          grid-row-start: 1;
-          grid-row-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
       }
   }
 
@@ -140,7 +121,7 @@
 
   &__title {
     letter-spacing: .4px;
-    font-size: $font-size__base;
+    // font-size: $font-size__base;
     font-weight: $font-weight__semibold;
     margin-top: 4px;
   }
