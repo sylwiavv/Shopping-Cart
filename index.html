@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,16 +21,19 @@
         <div class="cart-ammount"><span id="cart-product-number">0</span></div>
       </div>
       <div id="cart-list" class="cart-container">
-        <h1>Your cart</h1>
-        <p class="cart-list__empty">Your cart is empty</p>
+        <div class="minicart-header">
+          <h4>Twój koszyk</h4>
+          <div id="close-minicart" class="minicart-close"></div>
+        </div>
+        <p class="cart-information empty">Twój koszyk jest pusty</p>
         <ul id="main-products-cart-list" class="products-list-container cart"></ul>
-        <div class="total-price-container">Total: <span id="total-price">$0</span></div>
+              <div class="total-price-container">Total: <span id="total-price">$0</span></div>
       </div>
   </div>
   </nav>
   <div class="main-box">
     <div id="product-list">
-      <h1>Our plants</h1>
+      <h1 class="products-list-header">Nasze produkty</h1>
       <ul id="main-products-list" class="products-list-container"></ul>
     </div>
   </div>
