@@ -2,12 +2,19 @@
   //only products
   &:not(.cart) {
     .product {
+      display: flex;
+      flex-direction: column;
+
       &__image-container {
         padding-bottom: 100%;
         max-width: 100%;
       }
 
       &-information {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
         &__price {
           grid-row: span 2;
           align-self: end;
@@ -96,13 +103,13 @@
 .product-information {
   &__to-cart {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, auto);
+    margin-top: auto;
 
     .label {
       span {
         display: block;
         font-size: 12px;
-        margin-bottom: $indent__xs;
 
         grid-row-start: 1;
         grid-row-end: 2;
@@ -121,9 +128,10 @@
 
   &__title {
     letter-spacing: .4px;
-    // font-size: $font-size__base;
+    font-size: .90em;
     font-weight: $font-weight__semibold;
     margin-top: 4px;
+    margin-bottom: $indent__s;
   }
 
   &__price {

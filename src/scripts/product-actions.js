@@ -59,12 +59,16 @@ const removeCartProduct = () => {
     removeButton.addEventListener('click', (event) => {
       const parentButtonClicked = removeButton.parentElement.parentElement;
       let productId = parentButtonClicked.dataset.productId;
+      let productToRemove = '';
 
-      let productCart = cartArray.filter(item => {
-          return item.Id === productId;
+      productToRemove = cartArray.find(function(item) {
+        return item.Id === productId;
       });
 
-      cartArray.pop(productCart);
+      let index = cartArray.indexOf(productToRemove);
+      cartArray.splice(index,1);
+
+      console.log(cartArray);
 
       updateNumberInCart();
       renderCart();
@@ -143,34 +147,34 @@ const updateQtyValueInCart = () => {
  const increase = document.querySelectorAll('#increase');
  const decrease = document.querySelectorAll('#decrease');
 
-increase.forEach((increaseButton) => {
-  increaseButton.addEventListener('click', (e) => {
-      const clickedButton = event.target;
-      let input = e.target.parentNode.querySelector('.cart_qty');
-      let parentButtonClicked = clickedButton.parentElement.parentElement.parentElement.parentElement;
-      let productId = parentButtonClicked.dataset.productId;
-      input = parseInt(input.value, 10);
-      input = isNaN(input) ? 0 : input;
-      input++;
-      e.target.parentNode.querySelector('.cart_qty').value = input;
-      totalCartPrice();
-      updateCartProductQty(productId, input);
+  increase.forEach((increaseButton) => {
+    increaseButton.addEventListener('click', (e) => {
+        const clickedButton = event.target;
+        let input = e.target.parentNode.querySelector('.cart_qty');
+        let parentButtonClicked = clickedButton.parentElement.parentElement.parentElement.parentElement;
+        let productId = parentButtonClicked.dataset.productId;
+        input = parseInt(input.value, 10);
+        input = isNaN(input) ? 0 : input;
+        input++;
+        e.target.parentNode.querySelector('.cart_qty').value = input;
+        totalCartPrice();
+        updateCartProductQty(productId, input);
+    });
   });
-});
 
-decrease.forEach((decreaseButton) => {
-  decreaseButton.addEventListener('click', (e) => {
-      const clickedButton = event.target;
-      let input = e.target.parentNode.querySelector('.cart_qty');
-      let parentButtonClicked = clickedButton.parentElement.parentElement.parentElement.parentElement;
-      let productId = parentButtonClicked.dataset.productId;
-      input = parseInt(input.value, 10);
-      input = isNaN(input) ? 0 : input;
-      input < 1 ? input = 1 : '';
-      input--;
-      e.target.parentNode.querySelector('.cart_qty').value = input;
-      totalCartPrice();
-      updateCartProductQty(productId, input);
+  decrease.forEach((decreaseButton) => {
+    decreaseButton.addEventListener('click', (e) => {
+        const clickedButton = event.target;
+        let input = e.target.parentNode.querySelector('.cart_qty');
+        let parentButtonClicked = clickedButton.parentElement.parentElement.parentElement.parentElement;
+        let productId = parentButtonClicked.dataset.productId;
+        input = parseInt(input.value, 10);
+        input = isNaN(input) ? 0 : input;
+        input < 1 ? input = 1 : '';
+        input--;
+        e.target.parentNode.querySelector('.cart_qty').value = input;
+        totalCartPrice();
+        updateCartProductQty(productId, input);
+    });
   });
-});
 }
