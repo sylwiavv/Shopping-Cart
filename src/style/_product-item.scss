@@ -119,8 +119,10 @@
     input,
     input:disabled {
       background-color: $white-color;
-      color: #000;
       border-color: #dedede;
+      color: #000;
+      opacity: 1;
+
       grid-column-start: 1;
       grid-column-end: 2;
 

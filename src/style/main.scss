@@ -18,6 +18,7 @@
 }
 
 input {
+  background-clip: padding-box;
   border: 1px solid $gray-color__primary;
   font-size: 14px;
   text-align: center;
