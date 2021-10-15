@@ -116,7 +116,10 @@
       }
   }
 
-    input {
+    input,
+    input:disabled {
+      background-color: $white-color;
+      color: #000;
       border-color: #dedede;
       grid-column-start: 1;
       grid-column-end: 2;

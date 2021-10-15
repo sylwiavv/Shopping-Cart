@@ -50,7 +50,7 @@ const renderProducts = (container, products) => {
             <div class="product-information__to-cart">
             <form>
             <label class="label" for="qty"><span>Ilość</span></label>
-              <input class="product-information__qty cart_qty ${product.Name}" name="qty" type="number" value="${product.Qty}">
+              <input class="product-information__qty" name="qty" type="number" value="${product.Qty}">
             </form>
               <p class="product-information__price">$${product.Price}</p>
             </div>
@@ -71,9 +71,9 @@ const renderCartProducts = (products) => {
             <div class="product-information__to-cart">
               <label class="label" for="qty"><span>Ilość</span></label>
               <form>
-                <div class="value-button" id="decrease" value="Decrease Value">-</div>
-                <input class="product-information__qty cart_qty ${product.Name}" name="qty" type="number" value="${product.Qty}">
-                <div class="value-button" id="increase" value="Increase Value">+</div>
+                <div class="value-button decrease" value="Decrease Value">-</div>
+                <input class="product-information__qty cart_qty" name="qty" type="number" value="${product.Qty}">
+                <div class="value-button increase" value="Increase Value">+</div>
               </form>
               <p class="product-information__price">$${product.Price}</p>
             </div>

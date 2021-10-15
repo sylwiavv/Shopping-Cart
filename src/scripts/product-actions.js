@@ -47,12 +47,17 @@ const renderCart = () => {
     product.Qty = cartItem.Qty;
     return product;
   });
-
   renderCartProducts(products);
   removeCartProduct();
   totalCartPrice();
+
+  let cartInputs = document.querySelectorAll('.cart_qty');
+  cartInputs.forEach(cartInput => {
+      cartInput.disabled = true;
+  });
 }
 
+// Removing product from cart
 const removeCartProduct = () => {
   const removeButtons = document.querySelectorAll('.remove-from-cart');
   removeButtons.forEach(removeButton => {
@@ -67,8 +72,6 @@ const removeCartProduct = () => {
 
       let index = cartArray.indexOf(productToRemove);
       cartArray.splice(index,1);
-
-      console.log(cartArray);
 
       updateNumberInCart();
       renderCart();
@@ -144,13 +147,14 @@ const updateCartProductQty = (productId, itemQty) => {
 }
 
 const updateQtyValueInCart = () => {
- const increase = document.querySelectorAll('#increase');
- const decrease = document.querySelectorAll('#decrease');
+ const increase = document.querySelectorAll('.increase');
+ const decrease = document.querySelectorAll('.decrease');
 
   increase.forEach((increaseButton) => {
     increaseButton.addEventListener('click', (e) => {
         const clickedButton = event.target;
         let input = e.target.parentNode.querySelector('.cart_qty');
+        console.log(input);
         let parentButtonClicked = clickedButton.parentElement.parentElement.parentElement.parentElement;
         let productId = parentButtonClicked.dataset.productId;
         input = parseInt(input.value, 10);
