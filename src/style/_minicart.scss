@@ -4,8 +4,6 @@
   }
 
   &.active {
-    pointer-events: none;
-
     &:after {
       opacity: 1;
       visibility: visible;
@@ -178,7 +176,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 12px;
-    padding: $indent__l;
+    padding: $indent__m;
 
     width: 16px;
     height: 16px;
@@ -189,7 +187,7 @@
     justify-content: space-between;
     align-items: center;
     padding: $indent__m;
-    padding-right: 0;
+    padding-right: $indent__s;
     border-bottom: 1px solid $border__color;
   }
 

@@ -15,7 +15,14 @@
   box-sizing: border-box;
   font-family: $main-font;
   line-height: 1.4em;
+  -webkit-tap-highlight-color: transparent;
+
 }
+
+*:focus {
+  outline: 0;
+  outline: none;
+  }
 
 input {
   background-clip: padding-box;
@@ -52,7 +59,6 @@ body {
 
     .navbar {
       .cart-icon {
-        pointer-events: none;
       }
     }
   }

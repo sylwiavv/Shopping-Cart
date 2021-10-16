@@ -27,3 +27,9 @@
     }
   }
 }
+
+@include media-queries(phone-only) {
+  .navbar {
+    padding: $indent__s $indent__m;
+  }
+}
