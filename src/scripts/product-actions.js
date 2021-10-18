@@ -2,6 +2,8 @@ const body = document.body;
 const addToCartButtons = document.querySelectorAll('.add-to-cart');
 const productList = document.querySelectorAll('.products-list-container');
 const cartArray = [];
+// let allNewDivs = parentButtonClicked.querySelector('.add-to-cart-modal');
+let timer;
 
 // ADD CLICK
 addToCartButtons.forEach(addButton => {
@@ -10,7 +12,12 @@ addToCartButtons.forEach(addButton => {
     const parentButtonClicked = addButtonClicked.parentElement.parentElement.parentElement;
     let productId = parentButtonClicked.dataset.productId;
     let productQty = parentButtonClicked.querySelector('.product-information__qty').value;
+    let productTitle = parentButtonClicked.querySelector('.product-information__title').textContent;
+    console.log(productTitle);
     productQty = parseInt(productQty);
+    // let allNewDivss = document.querySelectorAll('.add-to-cart-modal');
+
+  
 
     if (isNaN(productQty) || productQty <= 0 || typeof productQty === 'string') {
       productQty = 1;
@@ -30,6 +37,32 @@ addToCartButtons.forEach(addButton => {
 
     } else {
       cartItem[0].Qty = productQty + cartItem[0].Qty;
+    }
+
+    let allNewDivs = parentButtonClicked.querySelector('.add-to-cart-modal');
+    let aContainer = document.createElement('div');
+    aContainer.setAttribute('class', 'add-to-cart-modal');
+    aContainer.innerHTML = "<p>Dodano produkt" + " " + `${productTitle}` + "</p>";
+    let oldTimer = timer;
+    timer = window.setTimeout(closeHelpDiv, 3000);
+
+    if (allNewDivs == undefined) {
+      parentButtonClicked.appendChild(aContainer);
+      console.log("settimer: " + timer);
+    } else {
+      window.clearTimeout(oldTimer);
+      console.log("cleaertimer: " + oldTimer);
+      let newTimer = window.setTimeout(closeHelpDiv, 3000);
+      console.log(newTimer);
+      allNewDivs.innerHTML = "<p>Dodano kolejną  sztukę" + " " + `${productTitle}` + "</p>";
+      console.log(allNewDivs);
+
+    }
+
+    function closeHelpDiv(){
+      console.log('test');
+      aContainer.remove();
+      allNewDivs.remove();
     }
 
     renderCart();

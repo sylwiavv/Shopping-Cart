@@ -10,19 +10,15 @@
 @import "products-list";
 @import "product-item";
 @import "minicart";
+@import "modal.scss";
 
 * {
   box-sizing: border-box;
   font-family: $main-font;
   line-height: 1.4em;
   -webkit-tap-highlight-color: transparent;
-
 }
 
-*:focus {
-  outline: 0;
-  outline: none;
-  }
 
 input {
   background-clip: padding-box;
