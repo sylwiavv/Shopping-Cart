@@ -39,10 +39,6 @@ const renderProducts = (container, products) => {
       `<li data-product-id="${product.Sku}" class="product">
           <div class="product__image-container">
             <img src="${product.Image}" alt="${product.Name}">
-            <div class="product-actions">
-              <div data="${product.Name}" class="add-to-cart"></div>
-              <div class="before-add-to-cart"></div>
-            </div>
           </div>
           <div class="product-information">
             <p class="product-information__sku">${product.Sku}</p>
@@ -55,6 +51,10 @@ const renderProducts = (container, products) => {
               <p class="product-information__price">$${product.Price}</p>
             </div>
           </div>
+          <div class="product-actions">
+          <div data="${product.Name}" class="add-to-cart"></div>
+          <div class="before-add-to-cart"></div>
+        </div>
       </li>`
   ).join('')
 }

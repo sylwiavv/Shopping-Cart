@@ -9,15 +9,12 @@ let timer;
 addToCartButtons.forEach(addButton => {
   addButton.addEventListener('click', (event) => {
     const addButtonClicked = event.target;
-    const parentButtonClicked = addButtonClicked.parentElement.parentElement.parentElement;
+    const parentButtonClicked = addButtonClicked.parentElement.parentElement;
     let productId = parentButtonClicked.dataset.productId;
     let productQty = parentButtonClicked.querySelector('.product-information__qty').value;
     let productTitle = parentButtonClicked.querySelector('.product-information__title').textContent;
-    console.log(productTitle);
     productQty = parseInt(productQty);
     // let allNewDivss = document.querySelectorAll('.add-to-cart-modal');
-
-  
 
     if (isNaN(productQty) || productQty <= 0 || typeof productQty === 'string') {
       productQty = 1;
@@ -39,30 +36,23 @@ addToCartButtons.forEach(addButton => {
       cartItem[0].Qty = productQty + cartItem[0].Qty;
     }
 
-    let allNewDivs = parentButtonClicked.querySelector('.add-to-cart-modal');
-    let aContainer = document.createElement('div');
-    aContainer.setAttribute('class', 'add-to-cart-modal');
-    aContainer.innerHTML = "<p>Dodano produkt" + " " + `${productTitle}` + "</p>";
+    let modalContainer = document.createElement('div');
+    modalContainer.setAttribute('class', 'add-to-cart-modal');
+    modalContainer.innerHTML = "<p>Dodano produkt" + " " + `${productTitle}` + "</p>";
     let oldTimer = timer;
     timer = window.setTimeout(closeHelpDiv, 3000);
-
-    if (allNewDivs == undefined) {
-      parentButtonClicked.appendChild(aContainer);
-      console.log("settimer: " + timer);
+    let getModalContainer = parentButtonClicked.querySelector('.add-to-cart-modal');
+    
+    if (getModalContainer == undefined) {
+      parentButtonClicked.appendChild(modalContainer);
     } else {
       window.clearTimeout(oldTimer);
-      console.log("cleaertimer: " + oldTimer);
-      let newTimer = window.setTimeout(closeHelpDiv, 3000);
-      console.log(newTimer);
-      allNewDivs.innerHTML = "<p>Dodano kolejną  sztukę" + " " + `${productTitle}` + "</p>";
-      console.log(allNewDivs);
-
+      getModalContainer.innerHTML = "<p>Dodano kolejną  sztukę" + " " + `${productTitle}` + "</p>";
     }
 
     function closeHelpDiv(){
-      console.log('test');
-      aContainer.remove();
-      allNewDivs.remove();
+      let getModalContainer = parentButtonClicked.querySelector('.add-to-cart-modal');
+      getModalContainer.remove();
     }
 
     renderCart();
