@@ -1,6 +1,7 @@
 const body = document.body;
 const addToCartButtons = document.querySelectorAll('.add-to-cart');
 const productList = document.querySelectorAll('.products-list-container');
+const mainProductsList = document.querySelector('#main-products-list');
 const cartArray = [];
 // let allNewDivs = parentButtonClicked.querySelector('.add-to-cart-modal');
 let timer;
@@ -14,7 +15,6 @@ addToCartButtons.forEach(addButton => {
     let productQty = parentButtonClicked.querySelector('.product-information__qty').value;
     let productTitle = parentButtonClicked.querySelector('.product-information__title').textContent;
     productQty = parseInt(productQty);
-    // let allNewDivss = document.querySelectorAll('.add-to-cart-modal');
 
     if (isNaN(productQty) || productQty <= 0 || typeof productQty === 'string') {
       productQty = 1;
@@ -42,16 +42,18 @@ addToCartButtons.forEach(addButton => {
     let oldTimer = timer;
     timer = window.setTimeout(closeHelpDiv, 3000);
     let getModalContainer = parentButtonClicked.querySelector('.add-to-cart-modal');
+    let getImageContainer = parentButtonClicked.querySelector('.product__image-container').cloneNode( true );
     
     if (getModalContainer == undefined) {
-      parentButtonClicked.appendChild(modalContainer);
+      body.appendChild(modalContainer);
+      modalContainer.appendChild(getImageContainer);
     } else {
       window.clearTimeout(oldTimer);
       getModalContainer.innerHTML = "<p>Dodano kolejną  sztukę" + " " + `${productTitle}` + "</p>";
     }
 
     function closeHelpDiv(){
-      let getModalContainer = parentButtonClicked.querySelector('.add-to-cart-modal');
+      let getModalContainer = body.querySelector('.add-to-cart-modal');
       getModalContainer.remove();
     }
 

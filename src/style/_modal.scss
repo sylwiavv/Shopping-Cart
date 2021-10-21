@@ -1,0 +1,33 @@
+.add-to-cart-modal {
+    z-index: 100;
+    color: wheat;
+    position: fixed;
+    font-size: 14px;
+    background-color: #29515b;
+    border: none;
+    border-bottom: 4px solid #6fb57f;
+    border-radius: 8px;
+    padding: 24px 48px 24px 64px;
+    max-width: 260px;
+    padding-left: 76px;
+    border-bottom: none;
+    margin: 0 auto;
+    max-width: 580px;
+    left: 24px;
+    bottom: 24px;
+    width: 90%;
+    z-index: 9999;
+    margin: 0 auto;
+
+    display: flex;
+
+    .product__image-container {
+        height: 70px;
+        width: 70px;
+    }
+
+    @include media-queries(phone-only) { 
+        left: 0;
+        right: 0;
+    }
+  }

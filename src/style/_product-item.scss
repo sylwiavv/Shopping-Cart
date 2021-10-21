@@ -93,10 +93,6 @@
   }
 }
 
-.product {
-
-}
-
 .product-information {
   &__to-cart {
     display: grid;
@@ -153,7 +149,6 @@
     margin-top: 4px;
   }
 }
-
 
 @include media-queries(phone-only) {
   .products-list-container {
