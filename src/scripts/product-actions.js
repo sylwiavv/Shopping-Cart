@@ -42,11 +42,11 @@ addToCartButtons.forEach(addButton => {
     let oldTimer = timer;
     timer = window.setTimeout(closeHelpDiv, 3000);
     let getModalContainer = parentButtonClicked.querySelector('.add-to-cart-modal');
-    let getImageContainer = parentButtonClicked.querySelector('.product__image-container').cloneNode( true );
+    let getImageContainer = parentButtonClicked.querySelector('.product__image-container').cloneNode(true);
     
     if (getModalContainer == undefined) {
       body.appendChild(modalContainer);
-      modalContainer.appendChild(getImageContainer);
+      modalContainer.prepend(getImageContainer);
     } else {
       window.clearTimeout(oldTimer);
       getModalContainer.innerHTML = "<p>Dodano kolejną  sztukę" + " " + `${productTitle}` + "</p>";

@@ -19,7 +19,6 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-
 input {
   background-clip: padding-box;
   border: 1px solid $gray-color__primary;
@@ -47,7 +46,7 @@ input {
 }
 
 body {
-  background-color: $white-color;
+  background-color: #f5f6fa;
 
   &.not-scroll {
     overflow-y: hidden;
