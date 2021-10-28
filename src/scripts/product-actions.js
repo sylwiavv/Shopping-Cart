@@ -2,6 +2,7 @@ const body = document.body;
 const addToCartButtons = document.querySelectorAll('.add-to-cart');
 const productList = document.querySelectorAll('.products-list-container');
 const mainProductsList = document.querySelector('#main-products-list');
+const cartIcon = document.querySelector('.cart-icon');
 const cartArray = [];
 // let allNewDivs = parentButtonClicked.querySelector('.add-to-cart-modal');
 let timer;
@@ -54,8 +55,11 @@ addToCartButtons.forEach(addButton => {
 
     function closeHelpDiv(){
       let getModalContainer = body.querySelector('.add-to-cart-modal');
-      getModalContainer.remove();
+      // getModalContainer.remove();
     }
+
+    cartIcon.classList.add('shake');
+    setTimeout(() => cartIcon.classList.remove('shake'), 500);
 
     renderCart();
     updateQtyValueInCart();

@@ -90,7 +90,6 @@
     "camelcase": "^3.0.0",
     "camelcase-keys": "^2.1.0",
     "caniuse-api": "^3.0.0",
-    "caniuse-lite": "^1.0.30001228",
     "caseless": "^0.12.0",
     "chalk": "^2.4.2",
     "chokidar": "^3.5.1",
