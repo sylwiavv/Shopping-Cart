@@ -10,6 +10,10 @@
       padding: $indent__s;
       overflow: hidden;
 
+      @include media-queries(desktop-up) {
+        padding: $indent__m;
+      }
+
       &__image-container {
         border-radius: $indent__s;
         position: relative;
@@ -110,11 +114,9 @@
 
 .product-information {
   &__to-cart {
-    // display: grid;
-    // grid-template-columns: repeat(2, auto);
     margin-top: auto;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 
     .label {
       span {
@@ -140,8 +142,6 @@
 
       grid-row-start: 2;
       grid-row-end: 3;
-
-      margin-bottom: $indent__s;
     }
   }
 

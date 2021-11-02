@@ -28,7 +28,7 @@ input {
   padding-right: 4px;
   border-radius: 4px;
   width: 46px;
-  height: 24px;
+  height: 26px;
 
   &:focus {
     outline: none;
@@ -40,13 +40,15 @@ input {
     appearance: none;
   }
 
-  @include media-queries(phone-only) { 
-    width: 40px;
+  @include media-queries(phone-only) {
+    height: 26px;
+    width: 36px;
   }
 }
 
 body {
   background-color: #f5f6fa;
+  color: $font-color__primary;
 
   &.not-scroll {
     overflow-y: hidden;
@@ -73,7 +75,7 @@ img {
 }
 
 .main-box {
-  max-width: 1440px;
+  max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
   padding-right: 24px;

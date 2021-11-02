@@ -69,13 +69,13 @@ const renderCartProducts = (products) => {
             <p class="product-information__sku">${product.Sku}</p>
             <p class="product-information__title">${product.Name}</p>
             <div class="product-information__to-cart">
+            <p class="product-information__price">$${product.Price}</p>
               <label class="label" for="qty"><span>Ilość</span></label>
               <form>
                 <div class="value-button decrease" value="Decrease Value">-</div>
                 <input class="product-information__qty cart_qty" name="qty" type="number" value="${product.Qty}">
                 <div class="value-button increase" value="Increase Value">+</div>
               </form>
-              <p class="product-information__price">$${product.Price}</p>
             </div>
           </div>
 

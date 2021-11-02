@@ -62,7 +62,6 @@ addToCartButtons.forEach(addButton => {
     setTimeout(() => cartIcon.classList.remove('shake'), 500);
 
     renderCart();
-    updateQtyValueInCart();
     updateNumberInCart();
   });
 });
@@ -78,6 +77,7 @@ const renderCart = () => {
   });
   renderCartProducts(products);
   removeCartProduct();
+  updateQtyValueInCart();
   totalCartPrice();
 
   let cartInputs = document.querySelectorAll('.cart_qty');
@@ -189,6 +189,7 @@ const updateQtyValueInCart = () => {
         input = parseInt(input.value, 10);
         input = isNaN(input) ? 0 : input;
         input++;
+
         e.target.parentNode.querySelector('.cart_qty').value = input;
         totalCartPrice();
         updateCartProductQty(productId, input);

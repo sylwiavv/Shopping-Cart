@@ -40,6 +40,7 @@
         align-items: center;
 
         height: auto;
+        border-radius: 4px;
 
         &:nth-child(odd) {
           background: $gray-color__primary;
@@ -48,6 +49,8 @@
         &__image-container {
           height: 100px;
           width: 100px;
+          border-radius: 4px;
+          overflow: hidden;
 
           align-self: start;
         }
@@ -63,20 +66,37 @@
           &__price {
             font-size: 16px;
             grid-row: 2/2;
+            margin-left: 0;
+          }
+
+          &__sku {
+            font-size: 8px;
           }
 
           &__to-cart {
             display: grid;
             grid-template-rows: auto 1fr;
+            grid-template-columns: repeat(2, 1fr);
             grid-gap: 0 8px;
             margin-bottom: $indent__s;
+            margin-right: $font-size__l;
 
             .label {
               grid-row: 1/1;
+              grid-column: 2/2;
+              justify-content: center;
+              margin-left: $indent__l;
+              margin-bottom: $indent__xs;
+            }
+
+            input {
+              border-radius: 0px;
             }
 
             form {
               display: flex;
+              align-items: center;
+              justify-content: flex-start;
               grid-row: 2/2;
             }
           }
@@ -85,6 +105,7 @@
         &-actions {
           display: flex;
           justify-content: center;
+          align-self: flex-start;
           padding: 0 $indent__xs;
         }
 
@@ -94,19 +115,42 @@
           justify-content: center;
           padding: $indent__s;
           box-sizing: border-box;
-          height: 24px;
+          border-radius: 4px;
+          height: 26px;
+
+          &.increase {
+            color: black;
+            background-color: $color-blue__primary;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
+          &.decrease {
+            border: 1px solid $border-color2;
+            border-right: 0;
+            border-radius: 0;
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+          }
         }
 
         .remove-from-cart {
           background-image: url(images/icons/icon_delete.svg);
           background-repeat: no-repeat;
           background-position: center;
-          background-size: 20px;
+          background-size: 16px;
+          border-radius: 8px;
           vertical-align: middle;
-          margin: 0;
+          margin: $indent__s $indent__xs 0 0;
+          @include transition(background-color, .3s, linear);
           padding: 0;
           width: 24px;
           height: 24px;
+
+          &:hover, 
+          &:focus {
+            background-color: #fd80801c;
+          } 
         }
       }
     }
@@ -131,7 +175,7 @@
       height: 15px;
       width: 15px;
       border-radius: 50%;
-      background: #000;
+      background-color: $black-color__primary;
 
       span {
         color: #fff;
@@ -191,9 +235,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: $indent__m;
-    padding-right: $indent__s;
-    border-bottom: 1px solid $border__color;
+    padding: $indent__m  $indent__m $indent__s;
   }
 
   .cart-information {
