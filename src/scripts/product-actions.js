@@ -3,11 +3,17 @@ const addToCartButtons = document.querySelectorAll('.add-to-cart');
 const productList = document.querySelectorAll('.products-list-container');
 const mainProductsList = document.querySelector('#main-products-list');
 const cartIcon = document.querySelector('.cart-icon');
-const cartArray = [];
+const amountCart = document.querySelector('#cart-product-number');
+
+let cartArray = [];
 // let allNewDivs = parentButtonClicked.querySelector('.add-to-cart-modal');
 let timer;
 
+const productsFromLocalStorage = JSON.parse(localStorage.getItem("myLocalCartProducts"));
+
+
 // ADD CLICK
+
 addToCartButtons.forEach(addButton => {
   addButton.addEventListener('click', (event) => {
     const addButtonClicked = event.target;
@@ -75,6 +81,8 @@ const renderCart = () => {
     product.Qty = cartItem.Qty;
     return product;
   });
+
+
   renderCartProducts(products);
   removeCartProduct();
   updateQtyValueInCart();
@@ -84,7 +92,9 @@ const renderCart = () => {
   cartInputs.forEach(cartInput => {
       cartInput.disabled = true;
   });
+  localStorage.setItem("myLocalCartProducts", JSON.stringify(cartArray));
 }
+
 
 // Removing product from cart
 const removeCartProduct = () => {
@@ -109,7 +119,6 @@ const removeCartProduct = () => {
 }
 
 const updateNumberInCart = () => {
-  const amountCart = document.querySelector('#cart-product-number');
   const cartIsEmpty = document.querySelector('.cart-information');
   amountCart.innerHTML = cartArray.length;
 
@@ -183,7 +192,6 @@ const updateQtyValueInCart = () => {
     increaseButton.addEventListener('click', (e) => {
         const clickedButton = event.target;
         let input = e.target.parentNode.querySelector('.cart_qty');
-        console.log(input);
         let parentButtonClicked = clickedButton.parentElement.parentElement.parentElement.parentElement;
         let productId = parentButtonClicked.dataset.productId;
         input = parseInt(input.value, 10);
@@ -211,4 +219,11 @@ const updateQtyValueInCart = () => {
         updateCartProductQty(productId, input);
     });
   });
+}
+
+if (productsFromLocalStorage) {
+  cartArray = productsFromLocalStorage;
+
+  updateNumberInCart();
+  renderCart();
 }
