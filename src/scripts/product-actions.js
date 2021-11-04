@@ -58,8 +58,14 @@ addToCartButtons.forEach(addButton => {
     }
 
     function closeHelpDiv(){
-      let getModalContainer = body.querySelector('.add-to-cart-modal');
-      // getModalContainer.remove();
+      let getModalContainer = body.querySelectorAll('.add-to-cart-modal');
+
+      getModalContainer.forEach(modal => { 
+        modal.classList.add('list-leave-active');
+        setTimeout(function(){
+          modal.remove();
+        }, 1000);
+      });
     }
 
     cartIcon.classList.add('shake');

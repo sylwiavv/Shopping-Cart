@@ -39,3 +39,9 @@
         margin: 0 auto;
     }
   }
+
+  .list-leave-active {
+    transform: translate(-100vw);
+    opacity: 0;
+    transition: 1s;
+  }
