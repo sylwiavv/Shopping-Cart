@@ -28,7 +28,7 @@
 
   .cart {
       grid-gap: 16px;
-      overflow: auto;
+      overflow: scroll;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
       padding: $indent__m;

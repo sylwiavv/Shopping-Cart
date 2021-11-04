@@ -11,9 +11,7 @@ let timer;
 
 const productsFromLocalStorage = JSON.parse(localStorage.getItem("myLocalCartProducts"));
 
-
 // ADD CLICK
-
 addToCartButtons.forEach(addButton => {
   addButton.addEventListener('click', (event) => {
     const addButtonClicked = event.target;
@@ -95,7 +93,6 @@ const renderCart = () => {
   localStorage.setItem("myLocalCartProducts", JSON.stringify(cartArray));
 }
 
-
 // Removing product from cart
 const removeCartProduct = () => {
   const removeButtons = document.querySelectorAll('.remove-from-cart');
@@ -154,9 +151,7 @@ const child = document.querySelector('#cart-list');
 const closeMinicartBtn = document.querySelector('#close-minicart');
 
 parent.addEventListener('click', (e) => {
-   if(e.target !== e.currentTarget) {
-     child.classList.add("active");
-   } else {
+   if(e.target === e.currentTarget) {
      parent.classList.toggle('active');
      body.classList.toggle('not-scroll');
    }
