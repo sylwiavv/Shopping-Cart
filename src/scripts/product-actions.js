@@ -45,7 +45,10 @@ addToCartButtons.forEach(addButton => {
     modalContainer.setAttribute('class', 'add-to-cart-modal');
     modalContainer.innerHTML = "<p>Dodano produkt" + " " + `${productTitle}` + "</p>";
     let oldTimer = timer;
-    timer = window.setTimeout(closeHelpDiv, 3000);
+
+    timer = window.setTimeout(() => modalContainer.classList.add('list-leave-active'), 3000);
+    window.setTimeout(() => document.querySelector('.list-leave-active').remove(), 5000);
+    
     let getModalContainer = parentButtonClicked.querySelector('.add-to-cart-modal');
     let getImageContainer = parentButtonClicked.querySelector('.product__image-container').cloneNode(true);
     
@@ -57,17 +60,6 @@ addToCartButtons.forEach(addButton => {
       getModalContainer.innerHTML = "<p>Dodano kolejną  sztukę" + " " + `${productTitle}` + "</p>";
     }
 
-    function closeHelpDiv(){
-      let getModalContainer = body.querySelectorAll('.add-to-cart-modal');
-
-      getModalContainer.forEach(modal => { 
-        modal.classList.add('list-leave-active');
-        setTimeout(function(){
-          modal.remove();
-        }, 1000);
-      });
-    }
-
     cartIcon.classList.add('shake');
     setTimeout(() => cartIcon.classList.remove('shake'), 500);
 
@@ -75,6 +67,7 @@ addToCartButtons.forEach(addButton => {
     updateNumberInCart();
   });
 });
+
 
 // Render products in cart
 const renderCart = () => {
@@ -85,7 +78,6 @@ const renderCart = () => {
     product.Qty = cartItem.Qty;
     return product;
   });
-
 
   renderCartProducts(products);
   removeCartProduct();
