@@ -123,6 +123,13 @@
             background-color: $color-blue__primary;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
+            transition: background-color .4s;
+
+            &:hover,
+            &:focus,
+            &:active {
+              background-color: $color-blue__primary-hover-action-focus;
+            }
           }
 
           &.decrease {

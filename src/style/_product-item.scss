@@ -34,11 +34,6 @@
         display: flex;
         flex-direction: column;
         flex-grow: 1;
-
-        &__price {
-          // grid-row: span 2;
-          // align-self: end;
-        }
       }
 
       &-actions {
@@ -178,7 +173,39 @@
           border-radius: $indent__s;
           position: static;
           margin-top: $indent__s;
+          height: 32px;
           width: 100%;
+          transition: background-color .4s;
+
+          &:hover,
+          &:focus,
+          &:active {
+            background-color: $color-blue__primary-hover-action-focus;
+          }
+
+          .add-to-cart {
+            display: block;
+            background-image: url(images/icons/icon_shopping-cart.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 20px;
+            width: 30px;
+            height: 30px;
+            opacity: 1;
+            transition: opacity .7s ease-out;
+
+            &:before {
+              display: none;
+            }
+          }
+
+          .before-add-to-cart {
+            display: none;
+
+            &:before {
+              display: none;
+            }
+          }
         }
 
         &-information__to-cart {
@@ -189,16 +216,6 @@
 
         &-information__title {
           margin-bottom: $indent__m;
-        }
-
-        &-actions {
-          height: 32px;
-
-          .before-add-to-cart {
-            background-size: 18px;
-            width: 22px;
-            height: 22px;
-          }
         }
       }
     }
