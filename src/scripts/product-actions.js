@@ -4,11 +4,10 @@ const productList = document.querySelectorAll('.products-list-container');
 const mainProductsList = document.querySelector('#main-products-list');
 const cartIcon = document.querySelector('.cart-icon');
 const amountCart = document.querySelector('#cart-product-number');
-
 let cartArray = [];
-// let allNewDivs = parentButtonClicked.querySelector('.add-to-cart-modal');
 let timer;
 
+// LOCAL STORAGE
 const productsFromLocalStorage = JSON.parse(localStorage.getItem("myLocalCartProducts"));
 
 // ADD CLICK
@@ -67,7 +66,6 @@ addToCartButtons.forEach(addButton => {
     updateNumberInCart();
   });
 });
-
 
 // Render products in cart
 const renderCart = () => {
@@ -128,7 +126,7 @@ const totalCartPrice = () => {
   const cartItems = document.querySelectorAll('#main-products-cart-list > .product');
   if ( cartItems.length ) {
     let total = 0;
-     for ( var i = 0; i < cartItems.length; i++) {
+     for (let i = 0; i < cartItems.length; i++) {
        let prodCart = cartItems[i];
        let prodCartPrice = prodCart.querySelectorAll('.product-information__price')[0];
        let price = parseFloat(prodCartPrice.innerText.replace('$', ''));
